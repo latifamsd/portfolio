@@ -76,30 +76,30 @@
     justify-content: center; /* Centrer les cartes */
 }
 
-/* Social Card Styles */
+/* Styles de base */
 .social-card {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 12px;
-    width: 230px;
+    width: 230px; /* Largeur par défaut */
+    max-width: 100%; /* Ne pas dépasser la largeur du conteneur */
     text-align: center;
-    text-decoration: none; /* Supprimer le soulignement */
+    text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: #333333; /* Texte par défaut */
+    color: #333333;
+    margin: 10px auto; /* Espacement entre les cartes */
 }
 
 .social-card:hover {
     transform: translateY(-8px);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    background-color: var(--second-color); /* Couleur de fond au survol */
-    text-decoration: none; /* Maintenir le style propre */
+    background-color: var(--second-color);
 }
 
-/* Icône */
 .social-card i {
     background-color: #1879ba;
     border-radius: 50%;
@@ -114,25 +114,56 @@
     background-color: #2980b9;
 }
 
-/* Texte principal */
 .social-card p {
     font-size: 18px;
     font-weight: 600;
     margin: 5px 0;
 }
 
-/* Texte secondaire */
 .social-card span {
     font-size: 15px;
     color: #7f8c8d;
 }
 
-/* Supprimer le soulignement des liens */
-.social-card a {
-    text-decoration: none;
-    color: inherit;
+/* Conteneur */
+.social-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Espacement entre les cartes */
 }
 
+/* Styles Responsives */
+@media screen and (max-width: 768px) {
+    .social-card {
+        width: 180px; /* Réduire la largeur sur les écrans plus petits */
+        padding: 15px;
+    }
+
+    .social-card i {
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    .social-card p {
+        font-size: 16px;
+    }
+
+    .social-card span {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .social-cards {
+        flex-direction: column; /* Empiler les cartes en colonne */
+        align-items: center;
+    }
+
+    .social-card {
+        width: 90%; /* Utiliser presque toute la largeur de l'écran */
+    }
+}
 
 
 
@@ -718,51 +749,7 @@ h3{
     z-index: 2;
 }
 
-/* ----- CONTACT FORM ----- */
-.form-control{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-}
-.form-inputs{
-    display: flex;
-    gap: 10px;
-    width: 100%;
-}
-.input-field{
-    width: 50%;
-    height: 55px;
-    background: transparent;
-    border: 2px solid #AAA;
-    border-radius: 10px;
-    padding-inline: 20px;
-    outline: none;
-}
-textarea{
-    width: 100%;
-    height: 250px;
-    background: transparent;
-    border: 2px solid #AAA;
-    border-radius: 10px;
-    padding: 15px 20px;
-    outline: none;
-    resize: none;
-}
-.form-button>.btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--second-color);
-    color: var(--color-white);
-}
-.form-button>.btn:hover{
-    background: #00B5E7;
-}
-.form-button i{
-    font-size: 18px;
-    rotate: -45deg;
-}
+
 
 /* ----- FOOTER BOX ----- */
 footer{
@@ -880,6 +867,12 @@ footer{
         width: 100%;
     }
     .about-info, .contact-info{
+        width: 100%;
+    }
+    .skills-info{
+        width: 100%;
+    }
+    .media-box{
         width: 100%;
     }
     .project-container{
