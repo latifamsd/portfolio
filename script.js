@@ -8,6 +8,34 @@ function myMenuFunction(){
       menuBtn.className = "nav-menu";
     }
   }
+  
+// Fonction pour gérer la classe active
+function setActiveLink() {
+  const sections = document.querySelectorAll("section"); // Toutes les sections avec un ID
+  const navLinks = document.querySelectorAll(".nav-link"); // Tous les liens de navigation
+
+  let currentSection = ""; 
+
+  // Vérifie quelle section est visible
+  sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (scrollY >= sectionTop - 50 && scrollY < sectionTop + sectionHeight) {
+          currentSection = section.getAttribute("id");
+      }
+  });
+
+  // Met à jour les liens actifs
+  navLinks.forEach((link) => {
+      link.classList.remove("active-link");
+      if (link.getAttribute("href").substring(1) === currentSection) {
+          link.classList.add("active-link");
+      }
+  });
+}
+
+// Ajouter un événement de défilement
+window.addEventListener("scroll", setActiveLink);
 
 /* ----- ADD SHADOW ON NAVIGATION BAR WHILE SCROLLING ----- */
   window.onscroll = function() {headerShadow()};

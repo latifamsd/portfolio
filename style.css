@@ -2,9 +2,9 @@
 /* Style pour le bouton "arrow up" */
 .arrow-up-btn {
     position: fixed;
-    bottom: 20px; /* Distance du bas de la fenêtre */
-    right: 20px; /* Distance du côté droit de la fenêtre */
-    background-color: var(--first-color); /* Couleur principale */
+    bottom: 20px; 
+    right: 20px; 
+    background-color: var(--first-color); 
     color: white;
     border: none;
     border-radius: 50%;
@@ -12,11 +12,11 @@
     height: 50px;
     font-size: 20px;
     cursor: pointer;
-    display: none; /* Masqué par défaut */
+    display: none; 
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* S'assurer qu'il reste au-dessus des autres éléments */
+    z-index: 1000;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -111,7 +111,8 @@
 }
 
 .social-card:hover i {
-    background-color: #2980b9;
+    background-color:rgb(255, 255, 255) ;
+    color: #2980b9 ;
 }
 
 .social-card p {
@@ -125,6 +126,9 @@
     color: #7f8c8d;
 }
 
+.social-card:hover span {
+    color: #ffffff ;
+}
 /* Conteneur */
 .social-cards {
     display: flex;
@@ -136,34 +140,65 @@
 /* Styles Responsives */
 @media screen and (max-width: 768px) {
     .social-card {
-        width: 180px; /* Réduire la largeur sur les écrans plus petits */
-        padding: 15px;
+        width: 160px;
+        padding: 12px;
     }
 
     .social-card i {
-        font-size: 24px;
-        padding: 10px;
+        font-size: 20px;
+        padding: 8px;
     }
 
     .social-card p {
-        font-size: 16px;
+        font-size: 14px;
+        text-align: center;
     }
 
     .social-card span {
-        font-size: 14px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .featured-text {
+        padding: 10px;
+    }
+
+    .image, .image img {
+        width: 200px;
+        height: 200px;
     }
 }
 
+
 @media screen and (max-width: 480px) {
     .social-cards {
-        flex-direction: column; /* Empiler les cartes en colonne */
+        flex-direction: column;
         align-items: center;
     }
 
     .social-card {
-        width: 90%; /* Utiliser presque toute la largeur de l'écran */
+        width: 90%;
+    }
+
+    .image, .image img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .featured-name {
+        font-size: 30px;
+    }
+
+    .form-inputs {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .input-field {
+        width: 100%;
     }
 }
+
 
 
 
@@ -200,16 +235,17 @@
 }
 
 @media (min-width: 540px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (min-width: 960px) {
-  .card-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
+
 
 .card {
   list-style: none;
@@ -326,14 +362,14 @@
     --body-color: rgb(250, 250, 250);
     --color-white: rgb(255, 255, 255);
 
-    --text-color-second: rgb(68, 68, 68);
+    --text-color-second: rgb(35, 35, 35);
     --text-color-third: rgb(30, 159, 171);
 
     --first-color: rgb(110, 87, 224);
     --first-color-hover: rgb(40, 91, 212);
 
-    --second-color: rgb(0, 201, 255);
-    --third-color: rgb(192, 49, 128);
+    --second-color: rgb(0, 145, 255);
+    --third-color: rgb(125, 11, 74);
     --first-shadow-color: rgba(0, 0, 0, 0.1);
 
 }
@@ -371,22 +407,36 @@ html{
 /* ---##-- REUSABLE CSS --##--- */
 
 /* ----- GLOBAL BUTTON DESIGN ----- */
-.btn{
+.btn {
     font-weight: 500;
     padding: 12px 20px;
     background: #ede9e9;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: .4s;
+    transition: 0.4s;
+    display: inline-block;
 }
-.btn>i{
-    margin-left: 10px;
+
+.btn-link {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transition pour le texte */
 }
-.btn:hover{
+
+.btn:hover {
     background: var(--first-color);
-    color: var(--color-white);
+    color: var(--color-white); /* Change la couleur du texte dans le bouton */
 }
+
+.btn:hover .btn-link {
+    color: var(--color-white); /* Change la couleur du lien au survol */
+}
+
+.btn:hover i {
+    color: white; /* Change la couleur de l'icône au survol */
+}
+
 
 /* ----- GLOBAL ICONS DESIGN ----- */
 i{
@@ -437,13 +487,34 @@ nav{
     list-style: none;
     position: relative;
 }
-.nav-link{
+/* Style pour le lien actif */
+.nav-link {
     text-decoration: none;
     color: var(--text-color-second);
     font-weight: 500;
     padding-inline: 15px;
     margin-inline: 20px;
+    transition: color 0.3s ease;
 }
+
+.nav-link.active-link {
+    color: var(--first-color);
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-link.active-link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 2px;
+    background: var(--first-color);
+    border-radius: 2px;
+}
+
 .nav-menu-btn{
     display: none;
 }
@@ -524,7 +595,8 @@ nav{
     color: var(--color-white);
 }
 .featured-text-btn>.blue-btn:hover{
-    background: var(--first-color-hover);
+    background:rgb(180, 0, 200);
+    
 }
 .social_icons{
     display: flex;
@@ -754,11 +826,12 @@ h3{
 /* ----- FOOTER BOX ----- */
 footer{
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     row-gap: 30px;
-    background: #87abdb;
+    background: #ddecfe;
     padding-block: 40px 60px;
 }
 .top-footer p{
@@ -881,6 +954,9 @@ footer{
     .project-box{
         width: 80%;
     }
+        .project-box{
+        width: 80%;
+    }
 
 }
 
@@ -898,5 +974,68 @@ footer{
     }
     .input-field{
         width: 100%;
+    }
+}
+/* Footer responsive */
+@media only screen and (max-width: 1024px) {
+    footer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    footer .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    footer .social-icons {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    footer .social-icons a {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    footer {
+        width: 100%;
+        padding: 15px;
+    }
+
+    footer .footer-links {
+        font-size: 14px;
+    }
+
+    footer .social-icons a {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    footer {
+        width: 100%;
+
+        padding: 10px;
+    }
+
+    footer .footer-links {
+        font-size: 12px;
+    }
+
+    footer .social-icons {
+        gap: 10px;
+    }
+
+    footer .social-icons a {
+        font-size: 14px;
     }
 }
