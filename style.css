@@ -82,12 +82,12 @@
   opacity: 1;
   bottom: 70px; 
 }
-/* Social Cards container */
+/* Conteneur des cartes */
 .social-cards {
     display: flex;
     flex-wrap: wrap; /* Permet aux cartes de s'ajuster automatiquement */
-    justify-content: space-around; /* Espacement uniforme */
-    gap: 20px; /* Espace entre les cartes */
+    justify-content: center; /* Centrer les cartes */
+    gap: 20px; /* Espacement entre les cartes */
 }
 
 /* Styles de base */
@@ -107,7 +107,8 @@
     color: #333333;
     margin: 10px auto;
     flex: 1 1 calc(50% - 20px); /* Deux cartes par ligne avec espace */
-    max-width: calc(50% - 20px);}
+    max-width: calc(50% - 20px);
+}
 
 .social-card:hover {
     transform: translateY(-8px);
@@ -115,21 +116,31 @@
     background-color: var(--second-color);
 }
 
+/* Icônes circulaires */
 .social-card i {
     background-color: #1879ba;
-    border-radius: 50%;
+    border-radius: 50%; /* Cercle parfait */
     font-size: 30px;
     color: #ffffff;
     padding: 15px;
     margin-bottom: 10px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px; /* Taille fixe pour un cercle parfait */
+    height: 60px; /* Taille fixe pour un cercle parfait */
 }
 
 .social-card:hover i {
-    background-color:rgb(255, 255, 255) ;
-    color: #2980b9 ;
+    background-color: rgb(255, 255, 255);
+    color: #2980b9;
+    transform: scale(1.1); /* Zoom léger au survol */
+    text-decoration: none;
+
 }
 
+/* Texte des cartes */
 .social-card p {
     font-size: 18px;
     font-weight: 600;
@@ -142,15 +153,10 @@
 }
 
 .social-card:hover span {
-    color: #ffffff ;
+    color: #ffffff;
+    text-decoration: none;
 }
-/* Conteneur */
-.social-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px; /* Espacement entre les cartes */
-}
+
 
 /* Styles Responsives */
 @media screen and (max-width: 768px) {
