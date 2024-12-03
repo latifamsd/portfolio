@@ -1,4 +1,18 @@
 
+    /* Slider */
+    .slick-slide {
+        margin: 0px 20px;
+      }
+      .slick-slide img {
+        width: 100%;
+      }
+      .slick-list {
+        overflow: hidden;
+      }
+      .slick-arrow.slick-hidden {
+        display: none;
+      }
+
 /* Style pour le bouton "arrow up" */
 .arrow-up-btn {
     position: fixed;
