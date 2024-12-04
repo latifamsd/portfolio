@@ -8,6 +8,13 @@ a:hover {
     text-decoration: none; /* Assure qu'il reste non souligné même au survol */
     color: var(--first-color); /* Exemple : change la couleur au survol */
 }
+.logo {
+    width: 30px; /* Ajustez la taille selon votre besoin */
+    height: auto; /* Garder les proportions de l'image */
+    margin-right: 10px; /* Espace entre l'image et le texte */
+    vertical-align: middle; /* Alignement vertical de l'image */
+}
+
 
  /* Slider */
     .slick-slide {
