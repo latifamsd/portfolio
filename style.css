@@ -1,5 +1,15 @@
 
-    /* Slider */
+a {
+    text-decoration: none; /* Supprime le soulignement */
+    color: inherit; /* Utilise la couleur héritée du parent */
+}
+
+a:hover {
+    text-decoration: none; /* Assure qu'il reste non souligné même au survol */
+    color: var(--first-color); /* Exemple : change la couleur au survol */
+}
+
+ /* Slider */
     .slick-slide {
         margin: 0px 20px;
       }
@@ -429,6 +439,7 @@ html{
 /* ---##-- REUSABLE CSS --##--- */
 
 /* ----- GLOBAL BUTTON DESIGN ----- */
+/* Bouton principal */
 .btn {
     font-weight: 500;
     padding: 12px 20px;
@@ -437,26 +448,39 @@ html{
     border-radius: 10px;
     cursor: pointer;
     transition: 0.4s;
-    display: inline-block;
+    display: inline-flex; /* Utiliser flexbox pour aligner contenu */
+    align-items: center;
+    gap: 8px; /* Espacement entre texte et icône */
 }
 
+/* Supprimer toutes les propriétés spécifiques au lien */
 .btn-link {
-    color: black;
-    text-decoration: none;
-    transition: color 0.3s ease; /* Transition pour le texte */
+    text-decoration: none; /* Supprimer soulignement */
+    color: inherit; /* Couleur héritée du parent */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacement entre texte et icône */
+}
+.btn-link:hover {
+    text-decoration: none; /* Supprimer soulignement */
+   
 }
 
+/* Effet au survol */
 .btn:hover {
     background: var(--first-color);
-    color: var(--color-white); /* Change la couleur du texte dans le bouton */
+    color: var(--color-white); /* Texte et icône en blanc */
 }
 
-.btn:hover .btn-link {
-    color: var(--color-white); /* Change la couleur du lien au survol */
-}
-
+/* Icône et lien héritent de la couleur au survol */
+.btn:hover .btn-link,
 .btn:hover i {
-    color: white; /* Change la couleur de l'icône au survol */
+    color: var(--color-white);
+}
+
+/* Ajustement pour icônes */
+i {
+    font-size: 16px; /* Ajuste la taille de l'icône si nécessaire */
 }
 
 
