@@ -1,26 +1,27 @@
 /* ----- NAVIGATION BAR FUNCTION ----- */
-function myMenuFunction(){
-    var menuBtn = document.getElementById("myNavMenu");
-
-    if(menuBtn.className === "nav-menu"){
+function myMenuFunction() {
+  const menuBtn = document.getElementById("myNavMenu");
+  if (menuBtn.className === "nav-menu") {
       menuBtn.className += " responsive";
-    } else {
+  } else {
       menuBtn.className = "nav-menu";
-    }
   }
-  
+}
+
 // Fonction pour gérer la classe active
 function setActiveLink() {
   const sections = document.querySelectorAll("section"); // Toutes les sections avec un ID
   const navLinks = document.querySelectorAll(".nav-link"); // Tous les liens de navigation
 
-  let currentSection = ""; 
+  let currentSection = "";
 
   // Vérifie quelle section est visible
   sections.forEach((section) => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
-      if (scrollY >= sectionTop - 50 && scrollY < sectionTop + sectionHeight) {
+
+      // Ajustement pour une détection plus précise de la section visible
+      if (scrollY >= sectionTop - 60 && scrollY < sectionTop + sectionHeight - 60) {
           currentSection = section.getAttribute("id");
       }
   });
@@ -33,6 +34,9 @@ function setActiveLink() {
       }
   });
 }
+
+// Attache l'événement de défilement
+window.addEventListener("scroll", setActiveLink);
 
 // Ajouter un événement de défilement
 window.addEventListener("scroll", setActiveLink);

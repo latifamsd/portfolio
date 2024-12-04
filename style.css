@@ -464,6 +464,9 @@ html{
 i{
     font-size: 16px;
 }
+a{
+    text-decoration: none;
+}
 
 /* ------- BASE -------- */
 body{
@@ -475,41 +478,44 @@ body{
 }
 
 /* ----- NAVIGATION BAR ----- */
-nav{
+/* ----- NAVIGATION BAR ----- */
+nav {
     position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 100vw; /* Correction : 100% de la largeur de la fenêtre */
     height: 90px;
     line-height: 90px;
     background: var(--body-color);
     padding-inline: 9vw;
-    transition: .3s;
+    transition: 0.3s;
     z-index: 100;
 }
-.nav-logo{
-   position: relative;
+.nav-logo {
+    position: relative;
 }
-.nav-name{
+.nav-name {
     font-size: 30px;
     font-weight: 600;
     color: var(--text-color-third);
 }
-.nav-logo span{
+.nav-logo span {
     position: absolute;
     top: -15px;
     right: -20px;
     font-size: 5em;
     color: var(--text-color-second);
 }
-.nav-menu, .nav_menu_list{
+.nav-menu, .nav_menu_list {
     display: flex;
 }
-.nav-menu .nav_list{
+.nav-menu .nav_list {
     list-style: none;
     position: relative;
 }
-/* Style pour le lien actif */
+/* Style pour le lien */
 .nav-link {
     text-decoration: none;
     color: var(--text-color-second);
@@ -518,13 +524,11 @@ nav{
     margin-inline: 20px;
     transition: color 0.3s ease;
 }
-
 .nav-link.active-link {
     color: var(--first-color);
     font-weight: 600;
     position: relative;
 }
-
 .nav-link.active-link::after {
     content: '';
     position: absolute;
@@ -536,20 +540,19 @@ nav{
     background: var(--first-color);
     border-radius: 2px;
 }
-
-.nav-menu-btn{
+.nav-menu-btn {
     display: none;
 }
-.nav-menu-btn i{
+.nav-menu-btn i {
     font-size: 28px;
     cursor: pointer;
 }
-.active-link{
+.active-link {
     position: relative;
     color: var(--first-color);
-    transition: .3;
+    transition: 0.3s;
 }
-.active-link::after{
+.active-link::after {
     content: '';
     position: absolute;
     left: 50%;
