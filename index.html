@@ -27,7 +27,6 @@
 </head>
 
 <body>
-    <div class="container">
         <!-- --------------- HEADER --------------- -->
         <nav id="header">
             <div class="nav-logo">
@@ -56,24 +55,27 @@
                         <a href="#contact" class="nav-link">Contact</a>
                         <div class="circle"></div>
                     </li>
+                    <li>
+                        <button onclick="toggleDarkMode()" class="btn-dark">
+                            <i class="bi bi-brightness-high"  id="dark-icon"></i>
+                            <i class="bi bi-moon" id="light-icon" style="display: none;"></i>
+                        </button>
+                    </li>
                 </ul>
             </div>
             <div class="nav-button">
                 <button class="btn">
                     <a href="https://raw.githubusercontent.com/latifamsd/portfolio/main/assets/images/images/latifamoussaidcv.pdf"
                         class="btn-link" download="latifamoussaidcv.pdf">
-                         <i class="uil uil-file-alt"></i>Download CV
+                        <i class="uil uil-file-alt"></i>Download CV
                     </a>
-                </button>                
+                </button>
             </div>
             <div class="nav-menu-btn">
                 <i class="uil uil-bars" onclick="myMenuFunction()"></i>
             </div>
         </nav>
-
-
-
-        <!-- -------------- MAIN ---------------- -->
+<!-- -------------- MAIN ---------------- -->
         <main class="wrapper">
             <!-- -------------- FEATURED BOX ---------------- -->
             <section class="featured-box" id="home">
@@ -96,8 +98,6 @@
                                 Download CV <i class="uil uil-file-alt"></i>
                             </a>
                         </button>
-
-
                     </div>
                     <div class="social_icons">
                         <div class="icon"><a href="https://www.linkedin.com/in/latifa-moussaid-278757278"
@@ -111,8 +111,6 @@
                         <img src="assets/images/images/avatar.jpg" alt="avatar">
                     </div>
                 </div>
-
-
             </section>
             <!-- -------------- ABOUT BOX ---------------- -->
             <section class="section" id="about">
@@ -127,11 +125,9 @@
                                 solutions. I work with technologies like Laravel, MySQL, React, HTML, CSS, and
                                 JavaScript to build responsive and user-friendly web applications.
                             </p>
-
                         </div>
                     </div>
-
-                    <div class="col skills-info">
+                   <div class="col skills-info">
                         <!-- Frontend Development Section -->
                         <div class="skills-box">
                             <div class="skills-header">
@@ -143,10 +139,8 @@
                                 <span>CSS</span>
                                 <span>Tailwind</span>
                                 <span>Bootstrap</span>
-
                             </div>
                         </div>
-
                         <!-- Backend Development Section -->
                         <div class="skills-box">
                             <div class="skills-header">
@@ -157,10 +151,8 @@
                                 <span>PHP</span>
                                 <span>Laravel</span>
                                 <span>Java</span>
-
                             </div>
                         </div>
-
                         <!-- Data Management Section -->
                         <div class="skills-box">
                             <div class="skills-header">
@@ -172,21 +164,16 @@
                                 <span>PostgreSQL</span>
                             </div>
                         </div>
-
                         <!-- Collaboration Tools Section -->
-
                     </div>
-
-
                 </div>
             </section>
-
             <section class=" resume py-5 d-lg-flex justify-content-center align-items-center" id="resume">
                 <div class="container">
                     <div class="row">
                         <!-- Éducation -->
                         <div class="col-lg-6 col-12 mb-4 mb-lg-0">
-                            <h2 class="mb-4 mobile-mt-2">Educations</h2>
+                            <h2 class="mb-4 mobile-mt-2 titre">Educations</h2>
                             <div class="timeline">
                                 <div class="timeline-wrapper">
                                     <div class="timeline-yr">
@@ -223,10 +210,9 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Expériences -->
                         <div class="col-lg-6 col-12">
-                            <h2 class="mb-4">Experience</h2>
+                            <h2 class="mb-4 titre">Experience</h2>
                             <div class="timeline">
                                 <div class="timeline-wrapper">
                                     <div class="timeline-yr">
@@ -265,13 +251,12 @@
                     </div>
                 </div>
             </section>
-
+            <!-- -------------- fin ABOUT BOX ---------------- -->
             <br>
             <div class="skills-header ">
                 <h3>Languages I Use</h3>
             </div>
             <section class="customer-logos slider section" id="skills">
-
                 <div class="slide">
                     <div class="skill-item">
                         <img src="./assets/images/sckils/html.png" alt="HTML">
@@ -363,7 +348,6 @@
                     </div>
                 </div>
             </section>
-
             <div class="skills-header">
                 <h3>Tools and technologies I use</h3>
             </div>
@@ -376,7 +360,7 @@
                 </div>
                 <div class="slide">
                     <div class="skill-item">
-                        <img src="./assets/images/sckils/github.jpg" alt="Github">
+                        <img src="./assets/images/sckils/github.png" alt="Github">
                         <p>Github</p>
                     </div>
                 </div>
@@ -425,7 +409,7 @@
             </section>
 
 
-            <section id="certificates" class="relative mx-auto py-12 min-h-screen max-w-6xl">
+           <section id="certificates" class="relative mx-auto py-12 min-h-screen max-w-6xl">
                 <div class="section">
                     <div class="container mx-auto">
                         <div class="top-header">
@@ -436,7 +420,6 @@
                                 <br>Each certificate represents a key milestone in my professional journey.
                             </p>
                         </div>
-
                         <!-- Online Certificates Container -->
                         <div class="card-grid top-header">
                             <!-- Card 1 -->
@@ -448,7 +431,6 @@
                                     <h3 class="card__heading">Java Certificate - LinkedIn Learning</h3>
                                 </div>
                             </a>
-
                             <!-- Card 2 -->
                             <a class="card"
                                 href="https://www.linkedin.com/learning/certificates/0cc711add8fa658d152d98351e48dcd116bff278d50e053bbbc7424b7824f354?trk=share_certificate">
@@ -458,7 +440,6 @@
                                     <h3 class="card__heading">PHP and MySQL Certificate - LinkedIn Learning</h3>
                                 </div>
                             </a>
-
                             <!-- Card 3 -->
                             <a class="card"
                                 href="https://www.linkedin.com/learning/certificates/293bec7d4afe53e5ae280d48abea99f52025a9372b1953ede598d1638f16d0d0?trk=share_certificate">
@@ -472,38 +453,7 @@
                     </div>
                 </div>
             </section>
-
-
-
-
-
-
-            <!-- -------------- PROJECT BOX ---------------- -->
-
-            <!--section class="section" id="projects">
-          <div class="top-header">
-              <h1>Projects</h1>
-          </div>
-          <div class="project-container">
-            <div class="project-box">
-                <h3>Completed</h3>
-                <label>15+ Finished Projects</label>
-            </div>
-            <div class="project-box">
-                <i class="uil uil-users-alt"></i>
-                <h3>Clients</h3>
-                <label>25+ Happy Clients</label>
-            </div>
-            <div class="project-box">
-                <i class="uil uil-award"></i>
-                <h3>Experience</h3>
-                <label>7+ Years in the field</label>
-            </div>
-          </div>
-       </section-->
-
-            <!-- -------------- CONTACT BOX ---------------- -->
-
+           <!-- -------------- CONTACT BOX ---------------- -->
             <section class="section" id="contact">
                 <div class="top-header">
                     <h1>Get in touch</h1>
@@ -543,15 +493,11 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </section>
-
         </main>
-
-
-        <!-- --------------- FOOTER --------------- -->
+        
+       <!-- --------------- FOOTER --------------- -->
         <footer>
             <div class="top-footer">
                 <p><img src="./assets/images/logo.png" class="logo" alt="Logo">Moussaid Latifa</p>
@@ -584,14 +530,9 @@
             </div>
         </footer>
 
-
-    </div>
-
     <button id="scrollToTop" class="arrow-up-btn" title="Go to top">
         &#8679; <!-- Flèche vers le haut -->
     </button>
-
-
     <!-- ----- TYPING JS Link ----- -->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
