@@ -192,33 +192,30 @@ $(document).ready(function() {
 });
 
 //dark
-if (localStorage.getItem('darkMode') === 'enabled') {
-  document.body.classList.add('dark-mode');
-  // Show the moon icon for dark mode
-  document.getElementById('dark-icon').style.display = 'inline-block';
-  document.getElementById('light-icon').style.display = 'none';
-} else {
-  // Show the sun icon for light mode
-  document.getElementById('dark-icon').style.display = 'none';
-  document.getElementById('light-icon').style.display = 'inline-block';
-}
+document.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('darkMode') === 'enabled') {
+      document.body.classList.add('dark-mode');
+      document.getElementById('dark-icon').style.display = 'inline-block';
+      document.getElementById('light-icon').style.display = 'none';
+  } else {
+      document.getElementById('dark-icon').style.display = 'none';
+      document.getElementById('light-icon').style.display = 'inline-block';
+  }
+});
 
-// Function to toggle dark mode
 function toggleDarkMode() {
   const body = document.body;
-  body.classList.toggle('dark-mode');
-
-  // Toggle icon visibility
   const lightIcon = document.getElementById('light-icon');
   const darkIcon = document.getElementById('dark-icon');
 
+  body.classList.toggle('dark-mode');
   if (body.classList.contains('dark-mode')) {
       localStorage.setItem('darkMode', 'enabled');
-      darkIcon.style.display = 'inline-block'; // Show moon for dark mode
-      lightIcon.style.display = 'none'; // Hide sun for dark mode
+      darkIcon.style.display = 'inline-block';
+      lightIcon.style.display = 'none';
   } else {
       localStorage.setItem('darkMode', 'disabled');
-      darkIcon.style.display = 'none'; // Hide moon for light mode
-      lightIcon.style.display = 'inline-block'; // Show sun for light mode
+      darkIcon.style.display = 'none';
+      lightIcon.style.display = 'inline-block';
   }
 }
