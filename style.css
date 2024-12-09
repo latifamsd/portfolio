@@ -114,78 +114,175 @@ a:hover {
   bottom: 70px; 
 }
 /* Conteneur des cartes */
-.social-cards {
+/* Conteneur principal */
+.contact-container {
     display: flex;
-    flex-wrap: wrap; /* Permet aux cartes de s'ajuster automatiquement */
-    justify-content: center; /* Centrer les cartes */
-    gap: 20px; /* Espacement entre les cartes */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    align-items: start;
 }
 
-/* Styles de base */
+/* --- Informations de contact --- */
+.contact-info {
+    background: linear-gradient(135deg, var(--second-color), var(--first-color));
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    color: var(--color-white);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(30deg);
+    animation: rotateGradient 8s linear infinite;
+}
+
+@keyframes rotateGradient {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.contact-info:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.contact-info h2 {
+    margin-bottom: 25px;
+    font-size: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #fff;
+}
+
+.contact-info i {
+    font-size: 2rem;
+    color: var(--first-color);
+    background: #fff;
+    border-radius: 100%;
+    padding: 10px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.contact-info:hover i {
+    transform: scale(1.2);
+    background: var(--first-color);
+    color: #fff;
+}
+
+/* --- Liens sociaux --- */
+.social-links {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.social-links h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--text-color-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Cartes des réseaux sociaux --- */
+.social-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
 .social-card {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    width: 230px; /* Largeur par défaut */
-    max-width: 100%; /* Ne pas dépasser la largeur du conteneur */
+    background: #f7f9fc;
+    padding: 25px;
+    border-radius: 15px;
+    width: 230px;
     text-align: center;
     text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: #333333;
-    margin: 10px auto;
-    flex: 1 1 calc(50% - 20px); /* Deux cartes par ligne avec espace */
-    max-width: calc(50% - 20px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    color: #333;
+    position: relative;
+}
+
+.social-card::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: var(--first-color);
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.social-card:hover::before {
+    transform: scaleX(1);
 }
 
 .social-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    background-color: var(--second-color);
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.2);
+    background: var(--first-color);
+    color: #fff;
 }
 
-/* Icônes circulaires */
 .social-card i {
-    background-color: #1879ba;
-    border-radius: 50%; /* Cercle parfait */
-    font-size: 30px;
-    color: #ffffff;
-    padding: 15px;
-    margin-bottom: 10px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px; /* Taille fixe pour un cercle parfait */
-    height: 60px; /* Taille fixe pour un cercle parfait */
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--first-color);
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .social-card:hover i {
-    background-color: rgb(255, 255, 255);
-    color: #2980b9;
-    transform: scale(1.1); /* Zoom léger au survol */
-    text-decoration: none;
-
+    transform: scale(1.2);
+    color: #fff;
 }
 
-/* Texte des cartes */
 .social-card p {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 5px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0;
 }
 
 .social-card span {
-    font-size: 15px;
-    color: #7f8c8d;
+    font-size: 1rem;
+    color: #777;
 }
 
 .social-card:hover span {
-    color: #ffffff;
-    text-decoration: none;
+    color: #fff;
 }
 
 
@@ -620,6 +717,34 @@ nav {
     background: var(--first-color);
     border-radius: 50%;
 }
+/* Mode sombre pour la barre de navigation */
+body.dark-mode nav {
+    background: #121212; /* Fond sombre */
+    color: rgba(110,87,224,255);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6); /* Ombre légère pour distinction */
+}
+
+body.dark-mode .nav-name {
+    color: #ffffff; /* Nom clair */
+}
+
+/* Lien de navigation en mode sombre */
+body.dark-mode .nav-link {
+    color: #ffff; /* Texte des liens en mode sombre */
+}
+
+body.dark-mode .nav-link.active-link {
+    color:rgba(110,87,224,255); /* Couleur d'accent pour le lien actif */
+}
+
+body.dark-mode .nav-link.active-link::after {
+    background: rgba(110,87,224,255); /* Couleur d'accent pour l'indicateur */
+}
+
+/* Bouton pour le menu en mode sombre */
+body.dark-mode .nav-menu-btn i {
+    color: #ffffff; /* Icône claire pour le menu */
+}
 
 
 /* ----- WRAPPER DESIGN ----- */
@@ -898,43 +1023,6 @@ body.dark-mode .skills-list span:hover {
 
 
 /* ----- CONTACT BOX ----- */
-.contact-info{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 30px;
-    width: 100%;
-    height: 315px;
-    background: var(--second-color);
-    border-radius: 10px;
-    box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
-    overflow: hidden;
-}
-.contact-info>h2{
-    color: var(--color-white);
-    margin-bottom: 20px;
-}
-.contact-info>p{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--color-white);
-    margin-block: 5px;
-}
-.contact-info p>i{
-    font-size: 18px;
-}
-.contact-info::after{
-    background: var(--color-white);
-}
-.contact-info:hover.contact-info h2,
-.contact-info:hover.contact-info p,
-.contact-info:hover.contact-info i{
-    color: #777;
-    z-index: 2;
-}
 
 
 
