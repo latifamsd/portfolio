@@ -215,6 +215,10 @@ body.dark-mode .social-links::after {
     .social-cards {
         grid-template-columns: 1fr;
     }
+    .arrow-up {
+        right: 10px;
+        bottom: 10px;
+    }
 }
 
 
