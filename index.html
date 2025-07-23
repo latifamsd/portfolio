@@ -1,122 +1,1729 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Coming Soon</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+    <title>MOUSSAID LATIFA Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
         }
-        
-        @keyframes blink {
-            from, to { border-color: transparent; }
-            50% { border-color: #3b82f6; }
+
+
+        .glass-effect {
+            background: rgb(255, 255, 255);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
+
+
+        .menu-transition {
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+
+        /*autre*/
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /*hero*/
+        @keyframes float {
+
+            0%,
+            100% {
                 transform: translateY(0);
             }
+
+            50% {
+                transform: translateY(-8px);
+            }
         }
-        
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+
+        .animate-float {
+            animation: float 8s ease-in-out infinite;
         }
-        
-        .typing-effect {
+
+        /* Carousel Container */
+        .carousel {
+            position: relative;
             overflow: hidden;
+            width: 100%;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 2rem;
+            overflow-x: hidden;
             white-space: nowrap;
-            border-right: 3px solid #3b82f6;
-            animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
         }
-        
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
+
+        .carousel-track::-webkit-scrollbar {
+            display: none;
         }
-        
-        .rotate-slow {
-            animation: rotate 20s linear infinite;
+
+
+
+        .carousel-item {
+            flex: 0 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 100px;
         }
+
+
+
+        .carousel-item img {
+            width: 64px;
+            height: 64px;
+        }
+
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /*educ pro*/
+        .timeline-dot {
+            transition: all 0.3s ease;
+        }
+
+        .group:hover .timeline-dot {
+            transform: scale(1.1);
+        }
+
+
+        .project-card {
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-overlay {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.9), rgba(16, 185, 129, 0.9));
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .contact-form {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-info-card {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(16, 185, 129, 0.1));
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /*certifes*/
+        .pro-blur-card {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .pro-blur-card:hover {
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Blur overlay pour les images */
+        .image-blur-overlay {
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+            transition: all 0.6s ease;
+        }
+
+        .pro-blur-card:hover .image-blur-overlay {
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
+        }
+
+        /* Effet de focus blur */
+        .focus-blur {
+            filter: blur(0px);
+            transition: filter 0.4s ease;
+        }
+
+        .pro-blur-card:hover .focus-blur {
+            filter: blur(1px);
+        }
+
+        .pro-blur-card:hover .no-blur {
+            filter: blur(0px);
+        }
+
+        /* Header avec blur */
+        .header-blur {
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Badge avec blur */
+        .badge-blur {
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            background: rgba(34, 197, 94, 0.2);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .badge-blur:hover {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(34, 197, 94, 0.3);
+            transform: scale(1.05);
+        }
+
+        /* Bouton avec blur */
+        .btn-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(34, 197, 94, 0.1);
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .btn-blur:hover {
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            background: rgba(34, 197, 94, 0.2);
+            border-color: rgba(34, 197, 94, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.2);
+        }
+
+        /* Effet de parallax blur */
+        .parallax-blur {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 20%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+            filter: blur(50px);
+            animation: parallaxFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes parallaxFloat {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            33% {
+                transform: translateY(-20px) rotate(1deg);
+            }
+
+            66% {
+                transform: translateY(10px) rotate(-1deg);
+            }
+        }
+
+        /* Texte avec blur sélectif */
+        .text-blur-effect {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .pro-blur-card:hover .text-blur-effect {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Icône avec blur */
+        .icon-blur {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .pro-blur-card:hover .icon-blur {
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Section background blur */
+        .section-blur {
+            backdrop-filter: blur(100px);
+            -webkit-backdrop-filter: blur(100px);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Animation d'apparition */
+        .fade-in-blur {
+            opacity: 0;
+            filter: blur(10px);
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in-blur.visible {
+            opacity: 1;
+            filter: blur(0px);
+            transform: translateY(0px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .pro-blur-card {
+                backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px);
+            }
+        }
+
+        /*project*/
+        .project-overlay {
+            background: rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .filter-btn.active {
+            background-color: #10b981;
+            color: white;
+            border-color: #10b981;
+        }
+
+        .carousel-tracks {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+
     </style>
 </head>
-<body class="min-h-screen bg-gray-900 text-white overflow-hidden">
-    <!-- Background avec motif géométrique -->
-    <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900"></div>
-    <div class="absolute inset-0 opacity-20">
-        <div class="absolute top-20 left-10 w-72 h-72 border-2 border-blue-500 rounded-full rotate-slow"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 border border-purple-500 rounded-full rotate-slow" style="animation-direction: reverse;"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-pink-500 rotate-45 rotate-slow"></div>
-    </div>
-    
-    <div class="relative z-10 flex items-center justify-center min-h-screen px-4">
-        <div class="text-center max-w-4xl">
-            <!-- Logo/Icône -->
-            <div class="mb-8 fade-in-up">
-                <div class="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl shadow-2xl mb-6">
-                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                    </svg>
-                </div>
+<body>
+<nav class="fixed w-full z-20 top-0 start-0 glass-effect">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center space-x-3 rtl:space-x-reverse group">
+            <div class="flex flex-col">
+                <span
+                    class="self-center text-xl font-bold whitespace-nowrap transition-all duration-300 group-hover:text-green-600">MOUSSAID
+                    LATIFA</span>
+                <span class="text-xs text-gray-500">Web Developer</span>
             </div>
-            
-            <!-- Titre avec effet de frappe -->
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 fade-in-up" style="animation-delay: 0.2s;">
-                <span class="typing-effect">Portfolio en développement...</span>
-            </h1>
-            
-            <!-- Sous-titre -->
-            <p class="text-xl md:text-2xl text-gray-300 mb-12 fade-in-up" style="animation-delay: 0.4s;">
-                Quelque chose d'incroyable arrive bientôt
-            </p>
-            
+        </a>
 
+        <!-- Buttons on right -->
+        <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <a href="https://raw.githubusercontent.com/latifamsd/portfolio/main/assets/images/images/latifamoussaidcv.pdf"
+                class="flex items-center gap-2 text-white bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-all duration-300 shadow-md hover:shadow-lg mr-3"
+                download="latifamoussaidcv.pdf">
+                <i class="fas fa-file-download"></i>
+                <span>Download CV</span>
+            </a>
+
+            <!-- Burger menu (mobile) -->
+            <button data-collapse-toggle="navbar-sticky" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all duration-300">
+                <i class="fas fa-bars text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Navbar links -->
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 menu-transition"
+            id="navbar-sticky">
+            <ul id="navbar-links"
+                class="flex flex-col p-4 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 bg-gray-900/50 backdrop-blur-md border border-green-400 md:border-0 md:bg-transparent">
+                <li><a href="#home" class="nav-link block py-2 px-3 text-gray-700">Home</a></li>
+                <li><a href="#about" class="nav-link block py-2 px-3 text-gray-700">About</a></li>
+                <li><a href="#certificates" class="nav-link block py-2 px-3 text-gray-700">Certificates</a></li>
+                <li><a href="#projects" class="nav-link block py-2 px-3 text-gray-700">Projects</a></li>
+                <li><a href="#contact" class="nav-link block py-2 px-3 text-gray-700">Contact</a></li>
+            </ul>
 
         </div>
     </div>
-    
-    
+</nav>
+
+<main style="height: 2000px; padding-top:50px;">
+    <!-- hero section -->
+    <section id="home"
+        class="min-h-screen  dark:bg-gray-900 flex flex-col md:flex-row items-center justify-center gap-10 px-6 py-12">
+        <!-- Image flottante -->
+        <div class="md:w-1/2 flex justify-center">
+            <img src="./assets/images/images/avatar.png" alt="Latifa Moussaid"
+                class="w-73 h-73 object-cover animate-float transition-transform duration-300">
+        </div>
+
+        <!-- Texte et contenu -->
+        <div class="md:w-1/2 flex flex-col items-start space-y-6">
+            <span class="bg-green-200 text-green-800 px-4 py-1 rounded-full text-sm font-medium">Développeuse
+                Full-Stack</span>
+
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 dark:text-white leading-tight">
+                Bonjour, je suis <span class="text-green-600">Latifa Moussaid</span><br>
+                Créatrice de solutions web modernes.
+            </h1>
+
+            <p class="text-gray-600 dark:text-gray-400 text-lg max-w-xl">
+                Passionnée par le développement web, je conçois des interfaces intuitives et développe des systèmes
+                performants pour répondre aux besoins des utilisateurs.
+            </p>
+
+            <!-- Boutons -->
+            <div class="flex flex-wrap gap-4">
+                <a href="#contact"
+                    class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg shadow-md transition">
+                    Me contacter
+                </a>
+                <a href="./Latifa_CV.pdf" download
+                    class="border border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-6 py-3 rounded-lg shadow-md transition flex items-center gap-2">
+                    <i class="fas fa-download"></i> CV
+                </a>
+            </div>
+
+            <!-- Icônes réseaux sociaux -->
+            <div class="flex space-x-4 mt-6">
+                <a href="https://linkedin.com/in/latifa-moussaid" target="_blank"
+                    class="text-gray-500 hover:text-green-600 transition text-xl">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/latifamsd" target="_blank"
+                    class="text-gray-500 hover:text-green-600 transition text-xl">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- about me -->
+    <section id="about" class="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center px-6 py-16">
+        <div class="max-w-7xl w-full mx-auto flex flex-col gap-10">
+            <!-- Top content: image and text -->
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <!-- Image side -->
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="./assets/images/images/avatar2.png" alt="Latifa Moussaid" class="w-72 h-75 ">
+                </div>
+
+                <!-- Text content side -->
+                <div class="md:w-1/2 flex flex-col items-start space-y-6">
+                    <span class="bg-green-200 text-green-800 px-4 py-1 rounded-full text-sm font-medium">À propos de
+                        moi</span>
+
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white leading-tight">
+                        Développeuse <span class="text-green-600">Full-Stack</span> passionnée par l'innovation.
+                    </h2>
+
+                    <p class="text-gray-600 dark:text-gray-400 text-lg max-w-xl">
+                        Je suis <span class="text-green-600 font-semibold">Latifa Moussaid</span>, spécialisée dans la
+                        création d'interfaces élégantes et intuitives.
+                        Mon expertise s'étend aux technologies modernes comme Laravel, Php, React, Python, JavaScript,
+                        et
+                        Tailwind CSS.
+                    </p>
+
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Toujours à la recherche de nouvelles opportunités pour apprendre, grandir et collaborer avec
+                        des équipes inspirantes sur des projets innovants.
+                    </p>
+
+                    <!-- Buttons -->
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects"
+                            class="border border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-6 py-3 rounded-lg shadow-md transition flex items-center gap-2">
+                            <i class="fas fa-laptop-code"></i> Voir mes projets
+                        </a>
+                    </div>
+
+                    <!-- Skills badges -->
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span
+                            class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium">HTML/CSS</span>
+                        <span
+                            class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium">JavaScript</span>
+                        <span
+                            class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium">ReactJS</span>
+                        <span
+                            class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium">Laravel</span>
+                        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium">Tailwind
+                            CSS</span>
+                        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium">MySQL</span>
+                        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium">...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel intégré directement dans la section about -->
+            <div class="w-full text-center mt-12">
+                <!-- Carousel -->
+                <div class="carousel auto-scroll">
+                    <div class="carousel-track">
+                        <!-- Carousel Items -->
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/languages/bootstrap.png" alt="bootstrap">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Bootstrap</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/languages/css.png" alt="css">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Css</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/languages/html.png" alt="html">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Html</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/languages/java.png" alt="java">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Java</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/languages/js.png" alt="js">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">JavaScript</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/languages/laravel.png" alt="laravel">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Laravel</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/languages/mongodb.png" alt="mongodb">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Mongodb</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/languages/mysql.png" alt="mysql">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Mysql</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/languages/nodejs.png" alt="nodejs">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Nodejs</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/languages/php.png" alt="php">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Php</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/languages/python.png" alt="python">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Python</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/languages/react.png" alt="react">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">React Js</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/languages/redux.png" alt="redux">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Redux</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/languages/tailwind.png" alt="tailwind">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Tailwind</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/languages/uml.png" alt="UML">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Uml</span>
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/tools/docker.png" alt="docker">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Docker</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/tools/figma.png" alt="figma">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Figma</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/tools/git.png" alt="git">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Git</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/tools/github.png" alt="github">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Github</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/tools/gitlab.png" alt="gitlab">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Gitlab</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/tools/intellijidea.png" alt="intellijidea">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">IntelliJ IDEA</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/tools/jira.png" alt="jira">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Jira</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/tools/kubernetes.png" alt="kubernetes">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Kubernetes</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/tools/staruml.png" alt="staruml">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">StarUML
+                            </span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/skills/tools/vs.png" alt="vs">
+                            <span class="text-sm text-gray-700 dark:text-white mt-2">Visual Studio Code
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Éducation & Expérience-->
+    <section id="resume" class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class=" mb-16">
+                <span class="bg-green-200 text-green-800 px-4 py-1 rounded-full text-sm font-medium">Mon Parcours</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mt-4">Éducation & Expérience
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Éducation -->
+                <div>
+                    <h2 class="text-2xl font-bold text-green-600 mb-8 flex items-center gap-2">
+                        <i class="fas fa-graduation-cap"></i> Éducation
+                    </h2>
+                    <div class="space-y-10 border-l-4 border-green-600 pl-6 relative">
+                        <!-- Bloc 2025 -->
+                        <div class="relative group">
+                            <div
+                                class="absolute -left-11 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold timeline-dot">
+                                2025
+                            </div>
+                            <div
+                                class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                                <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Professional Bachelor's
+                                    Degree in Web and Mobile Development</h3>
+                                <small class="text-green-600 font-medium">ENSAM</small>
+                                <p class="mt-2 text-gray-600 dark:text-gray-300">Currently pursuing a Professional
+                                    Bachelor's Degree in Web and Mobile Development at ENSAM.</p>
+                            </div>
+                        </div>
+
+                        <!-- Bloc 2024 -->
+                        <div class="relative group">
+                            <div
+                                class="absolute -left-11 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold timeline-dot">
+                                2024
+                            </div>
+                            <div
+                                class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                                <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Specialized Technician
+                                    Diploma in Digital Development</h3>
+                                <small class="text-green-600 font-medium">OFPPT (Ntic2)</small>
+                                <p class="mt-2 text-gray-600 dark:text-gray-300">Obtained a Specialized Technician
+                                    Diploma in Digital Development, Fullstack Option, from OFPPT.</p>
+                            </div>
+                        </div>
+
+                        <!-- Bloc 2022 -->
+                        <div class="relative group">
+                            <div
+                                class="absolute -left-11 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold timeline-dot">
+                                2022
+                            </div>
+                            <div
+                                class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                                <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Baccalaureate in
+                                    Physical Sciences</h3>
+                                <small class="text-green-600 font-medium">Abdelkhalek Toress High School</small>
+                                <p class="mt-2 text-gray-600 dark:text-gray-300">Obtained a Baccalaureate in Physical
+                                    Sciences at Abdelkhalek Toress High School.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expérience -->
+                <div>
+                    <h2 class="text-2xl font-bold text-green-600 mb-8 flex items-center gap-2">
+                        <i class="fas fa-briefcase"></i> Expérience
+                    </h2>
+                    <div class="space-y-10 border-l-4 border-green-600 pl-6 relative">
+                        <!-- Bloc OmiaData -->
+                        <div class="relative group">
+                            <div
+                                class="absolute -left-11 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold timeline-dot">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div
+                                class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                                <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Web Developer Intern
+                                </h3>
+                                <small class="text-green-600 font-medium">OmiaData Group</small>
+                                <p class="mt-2 text-gray-600 dark:text-gray-300">6-month internship at OmiaData, where I
+                                    worked on:</p>
+                                <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 mt-2 space-y-1 pl-4">
+                                    <li>Development and maintenance of websites.</li>
+                                    <li>Collaboration with the design team to optimize UX/UI.</li>
+                                    <li>Using modern technologies: HTML, CSS, JavaScript, Laravel.</li>
+                                    <li>Managing functionalities via GitLab.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Bloc Automotive -->
+                        <div class="relative group">
+                            <div
+                                class="absolute -left-11 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold timeline-dot">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div
+                                class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                                <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Web Developer Intern
+                                </h3>
+                                <small class="text-green-600 font-medium">Automotive Equipment Agency</small>
+                                <p class="mt-2 text-gray-600 dark:text-gray-300">1-month internship, where I achieved:
+                                </p>
+                                <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 mt-2 space-y-1 pl-4">
+                                    <li>Development of a commercial management website (client and admin sections).</li>
+                                    <li>Using modern technologies: Laravel, React, SQL.</li>
+                                    <li>Code and version management via GitHub.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-20 relative overflow-hidden section-blur">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <span class="bg-green-200 text-green-800 px-4 py-1 rounded-full text-sm font-medium">
+                    Mes Certifications</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mt-4"> Certificats Obtenus</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
+                    Découvrez les certifications qui attestent de mon expertise et de mon engagement continu dans le
+                    développement web. </p>
+            </div>
+
+            <!-- Certificates Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Certificate 1 -->
+                <div class="fade-in-blur">
+                    <a href="https://www.linkedin.com/learning/certificates/c7685da416e413e9009dec7673e27ed480544b209294f92bbf05c86513ae99e1?trk=share_certificate"
+                        target="_blank" class="pro-blur-card group relative overflow-hidden rounded-2xl block">
+                        <img src="assets/images/images/javac.jpg" alt="Java Certificate"
+                            class="focus-blur w-full h-64 object-cover">
+                        <div class="image-blur-overlay absolute inset-0"></div>
+                        <div class="absolute bottom-0 left-0 p-8 text-white no-blur">
+                            <span
+                                class="badge-blur text-green-300 text-xs font-bold px-4 py-2 rounded-full inline-block mb-4">
+                                Java
+                            </span>
+                            <h3 class="text-2xl font-bold mb-2 text-blur-effect">Java Certificate</h3>
+                            <p class="text-gray-300 mb-4">LinkedIn Learning</p>
+                            <div class="flex items-center text-sm text-gray-400">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                Voir le certificat
+                            </div>
+                        </div>
+                        <div
+                            class="icon-blur absolute top-6 right-6 p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-external-link-alt text-green-400"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="fade-in-blur">
+                    <a href="https://www.linkedin.com/learning/certificates/0cc711add8fa658d152d98351e48dcd116bff278d50e053bbbc7424b7824f354?trk=share_certificate"
+                        target="_blank" class="pro-blur-card group relative overflow-hidden rounded-2xl block">
+                        <img src="assets/images/images/wordc.jpg" alt="PHP and MySQL Certificate"
+                            class="focus-blur w-full h-64 object-cover">
+                        <div class="image-blur-overlay absolute inset-0"></div>
+                        <div class="absolute bottom-0 left-0 p-8 text-white no-blur">
+                            <span
+                                class="badge-blur text-blue-300 text-xs font-bold px-4 py-2 rounded-full inline-block mb-4">
+                                PHP & MySQL
+                            </span>
+                            <h3 class="text-2xl font-bold mb-2 text-blur-effect">PHP and MySQL Certificate</h3>
+                            <p class="text-gray-300 mb-4">LinkedIn Learning</p>
+                            <div class="flex items-center text-sm text-gray-400">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                Voir le certificat
+                            </div>
+                        </div>
+                        <div
+                            class="icon-blur absolute top-6 right-6 p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-external-link-alt text-blue-400"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="fade-in-blur">
+                    <a href="https://www.linkedin.com/learning/certificates/293bec7d4afe53e5ae280d48abea99f52025a9372b1953ede598d1638f16d0d0?trk=share_certificate"
+                        target="_blank" class="pro-blur-card group relative overflow-hidden rounded-2xl block">
+                        <img src="assets/images/images/phpc.jpg" alt="WordPress Certificate"
+                            class="focus-blur w-full h-64 object-cover">
+                        <div class="image-blur-overlay absolute inset-0"></div>
+                        <div class="absolute bottom-0 left-0 p-8 text-white no-blur">
+                            <span
+                                class="badge-blur text-purple-300 text-xs font-bold px-4 py-2 rounded-full inline-block mb-4">
+                                WordPress
+                            </span>
+                            <h3 class="text-2xl font-bold mb-2 text-blur-effect">WordPress Certificate</h3>
+                            <p class="text-gray-300 mb-4">LinkedIn Learning</p>
+                            <div class="flex items-center text-sm text-gray-400">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                Voir le certificat
+                            </div>
+                        </div>
+                        <div
+                            class="icon-blur absolute top-6 right-6 p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-external-link-alt text-purple-400"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Hidden Certificates -->
+                <div id="more-certificates"
+                    class="hidden col-span-1 md:col-span-2 lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Certificate 4 -->
+                    <div class="fade-in-blur">
+                        <a href="https://www.netacad.com/certificates?issuanceId=2edcaf33-ed83-444d-9990-bf7d4ed3e05c"
+                            target="_blank" class="pro-blur-card group relative overflow-hidden rounded-2xl block">
+                            <img src="assets/images/images/pyc.png" alt="Python Certificate"
+                                class="focus-blur w-full h-64 object-cover">
+                            <div class="image-blur-overlay absolute inset-0"></div>
+                            <div class="absolute bottom-0 left-0 p-8 text-white no-blur">
+                                <span
+                                    class="badge-blur text-yellow-300 text-xs font-bold px-4 py-2 rounded-full inline-block mb-4">
+                                    Python
+                                </span>
+                                <h3 class="text-2xl font-bold mb-2 text-blur-effect">Python Certificate</h3>
+                                <p class="text-gray-300 mb-4">Cisco Networking Academy</p>
+                                <div class="flex items-center text-sm text-gray-400">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    Voir le certificat
+                                </div>
+                            </div>
+                            <div
+                                class="icon-blur absolute top-6 right-6 p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <i class="fas fa-external-link-alt text-yellow-400"></i>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Certificate 5 -->
+                    <div class="fade-in-blur">
+                        <a href="https://www.netacad.com/certificates?issuanceId=4e52f2b1-7022-48f4-a8ac-20bb78621555"
+                            target="_blank" class="pro-blur-card group relative overflow-hidden rounded-2xl block">
+                            <img src="assets/images/images/jsc.png" alt="JavaScript Certificate"
+                                class="focus-blur w-full h-64 object-cover">
+                            <div class="image-blur-overlay absolute inset-0"></div>
+                            <div class="absolute bottom-0 left-0 p-8 text-white no-blur">
+                                <span
+                                    class="badge-blur text-yellow-300 text-xs font-bold px-4 py-2 rounded-full inline-block mb-4">
+                                    JavaScript
+                                </span>
+                                <h3 class="text-2xl font-bold mb-2 text-blur-effect">JavaScript Certificate</h3>
+                                <p class="text-gray-300 mb-4">Cisco Networking Academy</p>
+                                <div class="flex items-center text-sm text-gray-400">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    Voir le certificat
+                                </div>
+                            </div>
+                            <div
+                                class="icon-blur absolute top-6 right-6 p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <i class="fas fa-external-link-alt text-yellow-400"></i>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Certificate 6 -->
+                    <div class="fade-in-blur">
+                        <a href="https://www.life-global.org/certificate/edd86e87-8adc-4f0f-8ee5-2c903804da92"
+                            target="_blank" class="pro-blur-card group relative overflow-hidden rounded-2xl block">
+                            <img src="assets/images/images/hpc.png" alt="Data Science Certificate"
+                                class="focus-blur w-full h-64 object-cover">
+                            <div class="image-blur-overlay absolute inset-0"></div>
+                            <div class="absolute bottom-0 left-0 p-8 text-white no-blur">
+                                <span
+                                    class="badge-blur text-cyan-300 text-xs font-bold px-4 py-2 rounded-full inline-block mb-4">
+                                    Data Science
+                                </span>
+                                <h3 class="text-2xl font-bold mb-2 text-blur-effect">Sciences et analyses des données
+                                </h3>
+                                <p class="text-gray-300 mb-4">HP Life</p>
+                                <div class="flex items-center text-sm text-gray-400">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    Voir le certificat
+                                </div>
+                            </div>
+                            <div
+                                class="icon-blur absolute top-6 right-6 p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <i class="fas fa-external-link-alt text-cyan-400"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View More Button -->
+            <div class="text-center mt-16 fade-in-blur">
+                <button id="show-more-btn"
+                    class="px-4 py-1 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium py-4 rounded-lg transition-all duration-300 transform hover:scale-105 ">
+                    <i class="fas fa-plus-circle mr-3"></i>
+                    Voir plus de certificats
+                </button>
+
+            </div>
+        </div>
+    </section>
+
     <script>
-        // Animation du compteur
-        function updateCounter() {
-            const now = new Date().getTime();
-            const targetDate = now + (15 * 24 * 60 * 60 * 1000) + (8 * 60 * 60 * 1000) + (42 * 60 * 1000) + (19 * 1000);
-            
-            setInterval(() => {
-                const currentTime = new Date().getTime();
-                const distance = targetDate - currentTime;
-                
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
-                document.getElementById('days').textContent = days.toString().padStart(2, '0');
-                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-            }, 1000);
-        }
-        
-        updateCounter();
-        
-        // Animation des éléments au scroll/chargement
-        window.addEventListener('load', () => {
-            const elements = document.querySelectorAll('.fade-in-up');
-            elements.forEach((el, index) => {
+        // Show/Hide more certificates
+        document.getElementById('show-more-btn').addEventListener('click', function () {
+            const moreCertificates = document.getElementById('more-certificates');
+            const button = this;
+
+            if (moreCertificates.classList.contains('hidden')) {
+                moreCertificates.classList.remove('hidden');
+                button.innerHTML = '<i class="fas fa-minus-circle mr-3"></i> Voir moins';
+
+                // Animate new certificates
                 setTimeout(() => {
-                    el.style.opacity = '1';
-                }, index * 200);
+                    moreCertificates.querySelectorAll('.fade-in-blur').forEach((cert, index) => {
+                        setTimeout(() => {
+                            cert.classList.add('visible');
+                        }, index * 100);
+                    });
+                }, 100);
+            } else {
+                moreCertificates.classList.add('hidden');
+                button.innerHTML = '<i class="fas fa-plus-circle mr-3"></i> Voir plus de certificats';
+            }
+        });
+
+        // Intersection Observer for fade-in animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
             });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in-blur').forEach(el => {
+            observer.observe(el);
         });
     </script>
+    <!-- projet section -->
+    <section id="projects" class="py-16 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <span class="bg-green-200 text-green-800 px-4 py-1 rounded-full text-sm font-medium">Mes
+                    Réalisations</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mt-4">Projets Récents</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
+                    Découvrez une sélection de mes projets web, alliant créativité et expertise technique.
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button
+                    class="filter-btn active px-6 py-2 rounded-full border-2 border-green-600 text-green-600 font-medium transition-all duration-300 hover:bg-green-600 hover:text-white"
+                    data-filter="all">
+                    Tous les projets
+                </button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full border-2 border-gray-300 text-gray-600 font-medium transition-all duration-300 hover:border-green-600 hover:text-green-600"
+                    data-filter="web">
+                    Sites Web
+                </button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full border-2 border-gray-300 text-gray-600 font-medium transition-all duration-300 hover:border-green-600 hover:text-green-600"
+                    data-filter="ecommerce">
+                    E-commerce
+                </button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full border-2 border-gray-300 text-gray-600 font-medium transition-all duration-300 hover:border-green-600 hover:text-green-600"
+                    data-filter="mobile">
+                    Applications
+                </button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
+                    data-category="web">
+                    <div class="relative group">
+                        <img src="./assets/images/images/appChat.png" alt="Chat Boot" class="w-full h-48 object-cover">
+                        <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <a href="https://github.com/latifamsd/chatboot_flutter.git" target="_blank"
+                                    class="bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 transition inline-flex items-center">
+                                    <i class="fab fa-github mr-1"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span
+                                class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-medium">Flutter</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">API
+                                Gemini</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Chat Boot - Assistant IA par
+                            Gemini</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Une application Flutter qui utilise l'API
+                            Gemini pour créer un chatbot éducatif interactif. Fonctionnalités clés : discussions en
+                            temps réel, synthèse vocale, reconnaissance vocale et interface conviviale. Idéal pour
+                            l'apprentissage en ligne.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
+                    data-category="ecommerce">
+                    <div class="carousel relative group overflow-hidden" data-carousel>
+                        <div class="carousel-tracks flex transition-transform duration-500 ease-in-out">
+                            <img src="./assets/images/images/insta1.png" alt="Vue 1"
+                                class="w-full h-48 object-cover flex-shrink-0">
+                            <img src="./assets/images/images/insta2.png" alt="Vue 2"
+                                class="w-full h-48 object-cover flex-shrink-0">
+                        </div>
+
+                        <!-- Navigation -->
+                        <button
+                            class="carousel-prev absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center transition-all shadow-lg z-10">
+                            <i class="fas fa-chevron-left text-gray-600 text-sm"></i>
+                        </button>
+                        <button
+                            class="carousel-next absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center transition-all shadow-lg z-10">
+                            <i class="fas fa-chevron-right text-gray-600 text-sm"></i>
+                        </button>
+
+                        <!-- Dots -->
+                        <div class="carousel-dots absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10"></div>
+
+                        <!-- Overlay -->
+                        <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <a href="https://github.com/latifamsd/followers-unfollowers.git" target="_blank"
+                                    class="bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 transition inline-flex items-center">
+                                    <i class="fab fa-github mr-1"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span
+                                class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs font-medium">Python</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">HTML</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">CSS</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">InstaTrack - Gestion Avancée de
+                            Followers</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">InstaTrack est un outil web puissant
+                            développé en Python pour analyser et optimiser votre audience Instagram. Il offre une
+                            gestion précise de vos followers, identifie les comptes qui ne vous suivent pas en retour,
+                            et permet de les unfollow en un clic. Idéal pour les influenceurs et marketeurs souhaitant
+                            nettoyer leur réseau et booster leur engagement.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
+                    data-category="ecommerce">
+                    <div class="carousel relative group overflow-hidden" data-carousel>
+                        <div class="carousel-tracks flex transition-transform duration-500 ease-in-out">
+                            <img src="./assets/images/images/todoapp (5).png" alt="Todo App 1"
+                                class="w-full h-48 object-cover flex-shrink-0" />
+                            <img src="./assets/images/images/todoapp (4).png" alt="Todo App 2"
+                                class="w-full h-48 object-cover flex-shrink-0" />
+                            <img src="./assets/images/images/todoapp (3).png" alt="Todo App 3"
+                                class="w-full h-48 object-cover flex-shrink-0" />
+                            <img src="./assets/images/images/todoapp (2).png" alt="Todo App 4"
+                                class="w-full h-48 object-cover flex-shrink-0" />
+                            <img src="./assets/images/images/todoapp (1).png" alt="Todo App 5"
+                                class="w-full h-48 object-cover flex-shrink-0" />
+                        </div>
+
+                        <!-- Navigation -->
+                        <button
+                            class="carousel-prev absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center transition-all shadow-lg z-10">
+                            <i class="fas fa-chevron-left text-gray-600 text-sm"></i>
+                        </button>
+                        <button
+                            class="carousel-next absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center transition-all shadow-lg z-10">
+                            <i class="fas fa-chevron-right text-gray-600 text-sm"></i>
+                        </button>
+
+                        <!-- Dots -->
+                        <div class="carousel-dots absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10"></div>
+
+                        <!-- Overlay -->
+                        <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <a href="https://github.com/latifamsd/to-do.list.git" target="_blank"
+                                    class="bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 transition inline-flex items-center">
+                                    <i class="fab fa-github mr-1"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">PHP</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">HTML</span>
+                            <span
+                                class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-medium">Tailwind</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">TO-DO LIST</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">TO-DO LIST est un outil web puissant
+                            développé en MVC PHP pour gérer les projets avec simplicité. Il offre une
+                            gestion précise de vos tâches, vous permettant d'ajouter, de modifier et de supprimer des
+                            éléments facilement. Idéal pour les utilisateurs souhaitant organiser leur travail et
+                            améliorer leur productivité.</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
+                    data-category="web">
+                    <div class="relative group">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop"
+                            alt="Projet 4" class="w-full h-48 object-cover">
+                        <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <button
+                                    class="bg-white text-green-600 px-4 py-2 rounded-lg font-medium mr-2 hover:bg-gray-100 transition">
+                                    <i class="fas fa-eye mr-1"></i> Voir
+                                </button>
+                                <button
+                                    class="bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 transition">
+                                    <i class="fab fa-github mr-1"></i> Code
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span
+                                class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-medium">Vue.js</span>
+                            <span
+                                class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">Express</span>
+                            <span
+                                class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">PostgreSQL</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Dashboard Analytics</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Tableau de bord interactif avec graphiques
+                            en temps réel et analyse de données avancée.</p>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
+                    data-category="web">
+                    <div class="relative group">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop"
+                            alt="Projet 5" class="w-full h-48 object-cover">
+                        <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <button
+                                    class="bg-white text-green-600 px-4 py-2 rounded-lg font-medium mr-2 hover:bg-gray-100 transition">
+                                    <i class="fas fa-eye mr-1"></i> Voir
+                                </button>
+                                <button
+                                    class="bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 transition">
+                                    <i class="fab fa-github mr-1"></i> Code
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs font-medium">Angular</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">Spring
+                                Boot</span>
+                            <span
+                                class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs font-medium">Firebase</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Système de Réservation</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Plateforme de réservation en ligne avec
+                            calendrier interactif et notifications automatiques.</p>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
+                    data-category="ecommerce">
+                    <div class="relative group">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop"
+                            alt="Projet 6" class="w-full h-48 object-cover">
+                        <div class="project-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <button
+                                    class="bg-white text-green-600 px-4 py-2 rounded-lg font-medium mr-2 hover:bg-gray-100 transition">
+                                    <i class="fas fa-eye mr-1"></i> Voir
+                                </button>
+                                <button
+                                    class="bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 transition">
+                                    <i class="fab fa-github mr-1"></i> Code
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span
+                                class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">WordPress</span>
+                            <span
+                                class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">WooCommerce</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-medium">Custom
+                                PHP</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Marketplace Locale</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Marketplace pour artisans locaux avec
+                            système de notation et géolocalisation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button
+                    class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-plus mr-2"></i>
+                    Voir plus de projets
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Classe Carousel pour gérer tous les carousels
+        class Carousel {
+            constructor(element) {
+                this.root = element;
+                this.track = this.root.querySelector('.carousel-tracks');
+                this.slides = Array.from(this.track.children);
+                this.prevBtn = this.root.querySelector('.carousel-prev');
+                this.nextBtn = this.root.querySelector('.carousel-next');
+                this.dotsContainer = this.root.querySelector('.carousel-dots');
+                this.currentIndex = 0;
+                this.autoPlayInterval = null;
+
+                // Attendre que les images soient chargées
+                this.waitForImages().then(() => {
+                    this.init();
+                });
+            }
+
+            waitForImages() {
+                const images = this.root.querySelectorAll('img');
+                const promises = Array.from(images).map(img => {
+                    return new Promise(resolve => {
+                        if (img.complete) {
+                            resolve();
+                        } else {
+                            img.onload = resolve;
+                            img.onerror = resolve;
+                        }
+                    });
+                });
+                return Promise.all(promises);
+            }
+
+            init() {
+                this.setupCarousel();
+                this.createDots();
+                this.update();
+                this.addEvents();
+                // Démarrer l'autoplay après un délai
+                setTimeout(() => {
+                    this.startAutoPlay();
+                }, 1000);
+            }
+
+            setupCarousel() {
+                // S'assurer que le track a la bonne largeur
+                const totalWidth = this.slides.length * 100;
+                this.track.style.width = `${totalWidth}%`;
+
+                // Définir la largeur de chaque slide
+                this.slides.forEach(slide => {
+                    slide.style.width = `${100 / this.slides.length}%`;
+                });
+            }
+
+            createDots() {
+                this.dotsContainer.innerHTML = '';
+                this.slides.forEach((_, index) => {
+                    const dot = document.createElement('div');
+                    dot.className = 'w-2 h-2 rounded-full cursor-pointer bg-white/50 transition-all hover:bg-white/80';
+                    dot.addEventListener('click', () => {
+                        this.currentIndex = index;
+                        this.update();
+                        this.resetAutoPlay();
+                    });
+                    this.dotsContainer.appendChild(dot);
+                });
+            }
+
+            update() {
+                if (!this.slides.length) return;
+
+                // Calculer le décalage en pourcentage
+                const translateX = -(this.currentIndex * (100 / this.slides.length));
+                this.track.style.transform = `translateX(${translateX}%)`;
+
+                // Mise à jour des dots
+                Array.from(this.dotsContainer.children).forEach((dot, i) => {
+                    dot.className = i === this.currentIndex
+                        ? 'w-2 h-2 rounded-full bg-white cursor-pointer transition-all'
+                        : 'w-2 h-2 rounded-full bg-white/50 cursor-pointer transition-all hover:bg-white/80';
+                });
+            }
+
+            addEvents() {
+                this.nextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    this.next();
+                    this.resetAutoPlay();
+                });
+
+                this.prevBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    this.prev();
+                    this.resetAutoPlay();
+                });
+
+                // Pause l'autoplay au survol
+                this.root.addEventListener('mouseenter', () => {
+                    this.stopAutoPlay();
+                });
+
+                this.root.addEventListener('mouseleave', () => {
+                    this.startAutoPlay();
+                });
+
+                // Redimensionnement
+                window.addEventListener('resize', () => {
+                    // Petite temporisation pour éviter les appels répétés
+                    clearTimeout(this.resizeTimeout);
+                    this.resizeTimeout = setTimeout(() => {
+                        this.update();
+                    }, 100);
+                });
+            }
+
+            next() {
+                this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+                this.update();
+            }
+
+            prev() {
+                this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+                this.update();
+            }
+
+            startAutoPlay() {
+                if (this.autoPlayInterval || this.slides.length <= 1) return;
+                this.autoPlayInterval = setInterval(() => {
+                    this.next();
+                }, 3000);
+            }
+
+            stopAutoPlay() {
+                if (this.autoPlayInterval) {
+                    clearInterval(this.autoPlayInterval);
+                    this.autoPlayInterval = null;
+                }
+            }
+
+            resetAutoPlay() {
+                this.stopAutoPlay();
+                setTimeout(() => {
+                    this.startAutoPlay();
+                }, 1000);
+            }
+        }
+
+        // Système de filtrage des projets
+        class ProjectFilter {
+            constructor() {
+                this.filterButtons = document.querySelectorAll('.filter-btn');
+                this.projectCards = document.querySelectorAll('.project-card');
+                this.init();
+            }
+
+            init() {
+                this.filterButtons.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const filter = e.target.dataset.filter;
+                        this.setActiveButton(e.target);
+                        this.filterProjects(filter);
+                    });
+                });
+            }
+
+            setActiveButton(activeBtn) {
+                this.filterButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.classList.add('px-6', 'py-2', 'rounded-full', 'border-2', 'border-gray-300', 'text-gray-600', 'font-medium', 'transition-all', 'duration-300', 'hover:border-green-600', 'hover:text-green-600');
+                });
+
+                activeBtn.classList.add('active');
+                activeBtn.classList.remove('border-gray-300', 'text-gray-600');
+                activeBtn.classList.add('border-green-600', 'text-green-600');
+            }
+
+            filterProjects(filter) {
+                this.projectCards.forEach(card => {
+                    const category = card.dataset.category;
+
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'block';
+                        card.style.opacity = '0';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                        }, 100);
+                    } else {
+                        card.style.opacity = '0';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            }
+        }
+
+        // Initialisation au chargement du DOM
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialiser tous les carousels
+            document.querySelectorAll('[data-carousel]').forEach(el => {
+                new Carousel(el);
+            });
+
+            // Initialiser le système de filtrage
+            new ProjectFilter();
+        });
+    </script>
+
+
+    <!-- SECTION CONTACT -->
+    <section id="contact"
+        class="py-16 bg-gradient-to-br from-gray-900 via-green-900 to-gray-900 text-white relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-20 h-20 bg-green-400 rounded-full floating-animation"></div>
+            <div class="absolute top-32 right-20 w-16 h-16 bg-blue-400 rounded-full floating-animation"
+                style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-purple-400 rounded-full floating-animation"
+                style="animation-delay: 2s;"></div>
+            <div class="absolute bottom-32 right-1/3 w-24 h-24 bg-pink-400 rounded-full floating-animation"
+                style="animation-delay: 0.5s;"></div>
+        </div>
+
+        <div class="container mx-auto px-4 max-w-6xl relative z-10">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <span
+                    class="bg-green-500/20 text-green-300 px-4 py-1 rounded-full text-sm font-medium border border-green-500/30">Contactez-moi</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-4">Travaillons Ensemble</h2>
+                <p class="text-xl text-gray-300 mt-4 max-w-2xl mx-auto">
+                    Prêt à donner vie à votre projet ? Contactez-moi pour discuter de vos idées.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="contact-form rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-paper-plane mr-3 text-green-400"></i>
+                        Envoyez-moi un message
+                    </h3>
+
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Nom complet</label>
+                                <input type="text"
+                                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400/50 transition-all duration-300"
+                                    placeholder="Votre nom">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Email</label>
+                                <input type="email"
+                                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400/50 transition-all duration-300"
+                                    placeholder="votre@email.com">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Sujet</label>
+                            <input type="text"
+                                class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400/50 transition-all duration-300"
+                                placeholder="Sujet de votre message">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Message</label>
+                            <textarea rows="5"
+                                class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400/50 transition-all duration-300 resize-none"
+                                placeholder="Décrivez votre projet..."></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium py-4 rounded-lg transition-all duration-300 transform hover:scale-105 pulse-animation">
+                            <i class="fas fa-rocket mr-2"></i>
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="contact-info-card rounded-2xl p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Email</h4>
+                                <p class="text-gray-300">moussaidlatifa2@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card rounded-2xl p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Localisation</h4>
+                                <p class="text-gray-300">Casablanca, Maroc</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="contact-info-card rounded-2xl p-6">
+                        <h4 class="font-semibold text-lg mb-4">Suivez-moi</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://linkedin.com/in/latifa-moussaid-278757278" target="_blank"
+                                class="w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                                <i class="fab fa-linkedin text-white"></i>
+                            </a>
+                            <a href="https://github.com/latifamsd" target="_blank"
+                                class="w-12 h-12 bg-gray-800 hover:bg-gray-900 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                                <i class="fab fa-github text-white"></i>
+                            </a>
+                            <a href="https://wa.me/212693727993" target="_blank"
+                                class="w-12 h-12 bg-green-600 hover:bg-green-700 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                                <i class="fab fa-whatsapp text-white"></i>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <!-- Availability Status -->
+                    <div class="contact-info-card rounded-2xl p-6 border-2 border-green-500/50">
+                        <div class="text-center">
+                            <div class="w-4 h-4 bg-green-500 rounded-full mx-auto mb-2 pulse-animation"></div>
+                            <h4 class="font-semibold text-lg text-green-400">Disponible pour de nouveaux projets</h4>
+                            <p class="text-gray-300 text-sm mt-2">Réponse sous 24h garantie</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    /*nav*/
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.offsetHeight;
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("text-green-600", "font-semibold");
+            if (link.getAttribute("href") === `#${current}`) {
+                link.classList.add("text-green-600", "font-semibold");
+            }
+        });
+    });
+
+
+</script>
+<script>
+    const track = document.querySelector('.carousel-track');
+
+    // Dupliquer les éléments pour un effet de boucle fluide
+    const items = Array.from(track.children);
+    items.forEach(item => {
+        const clone = item.cloneNode(true);
+        track.appendChild(clone);
+    });
+
+    let scrollSpeed = 1; // pixels
+    let scrollInterval;
+
+    function startScroll() {
+        scrollInterval = setInterval(() => {
+            track.scrollLeft += scrollSpeed;
+
+            // Revenir au début sans montrer l'espace blanc
+            if (track.scrollLeft >= track.scrollWidth / 2) {
+                track.scrollLeft = 0;
+            }
+        }, 20);
+    }
+
+    function stopScroll() {
+        clearInterval(scrollInterval);
+    }
+
+    track.addEventListener('mouseenter', stopScroll);
+    track.addEventListener('mouseleave', startScroll);
+
+    startScroll();
+
+    // Project filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active', 'bg-green-600', 'text-white'));
+            button.classList.add('active', 'bg-green-600', 'text-white');
+
+            // Filter projects
+            projectCards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeIn 0.5s ease';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Contact form animation
+    const formInputs = document.querySelectorAll('input, textarea');
+    formInputs.forEach(input => {
+        input.addEventListener('focus', () => {
+            input.style.transform = 'scale(1.02)';
+        });
+
+        input.addEventListener('blur', () => {
+            input.style.transform = 'scale(1)';
+        });
+    });
+</script>
+
+
 </body>
+
 </html>
