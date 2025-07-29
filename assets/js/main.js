@@ -348,7 +348,7 @@ formInputs.forEach(input => {
 // EmailJS integration
 
 (function () {
-    emailjs.init("-QmE4sVYf64vCCTxk"); // Remplace avec ton vrai public key
+    emailjs.init("-QmE4sVYf64vCCTxk"); // Remplace avec ta vraie public key
 })();
 
 document.querySelector("form").addEventListener("submit", function (event) {
@@ -356,9 +356,20 @@ document.querySelector("form").addEventListener("submit", function (event) {
 
     emailjs.sendForm("service_jsrvsia", "template_ti79wrc", this)
         .then(function () {
-            alert("Message envoyé avec succès !");
+            Swal.fire({
+                icon: 'success',
+                title: 'Message envoyé',
+                text: 'Votre message a été envoyé avec succès !',
+                confirmButtonColor: '#3085d6',
+            });
         }, function (error) {
-            alert("Erreur lors de l'envoi. Réessayez.");
+            Swal.fire({
+                icon: 'error',
+                title: 'Erreur',
+                text: "Une erreur s'est produite. Veuillez réessayer.",
+                confirmButtonColor: '#d33',
+            });
             console.log(error);
         });
 });
+
