@@ -12,365 +12,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="./assets/js/main.js" defer></script>
 
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
 
-
-        .glass-effect {
-            background: rgb(255, 255, 255);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-
-        .menu-transition {
-            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-        }
-
-        /*autre*/
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /*hero*/
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-8px);
-            }
-        }
-
-        .animate-float {
-            animation: float 8s ease-in-out infinite;
-        }
-
-        /* Carousel Container */
-        .carousel {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-        }
-
-        .carousel-track {
-            display: flex;
-            gap: 2rem;
-            overflow-x: hidden;
-            white-space: nowrap;
-        }
-
-        .carousel-track::-webkit-scrollbar {
-            display: none;
-        }
-
-
-
-        .carousel-item {
-            flex: 0 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 100px;
-        }
-
-
-
-        .carousel-item img {
-            width: 64px;
-            height: 64px;
-        }
-
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        /*educ pro*/
-        .timeline-dot {
-            transition: all 0.3s ease;
-        }
-
-        .group:hover .timeline-dot {
-            transform: scale(1.1);
-        }
-
-
-        .project-card {
-            transform: translateY(0);
-            transition: all 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .project-overlay {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.9), rgba(16, 185, 129, 0.9));
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .project-card:hover .project-overlay {
-            opacity: 1;
-        }
-
-        .contact-form {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .contact-info-card {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(16, 185, 129, 0.1));
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(34, 197, 94, 0.2);
-        }
-
-        .floating-animation {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        .pulse-animation {
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        /*certifes*/
-        .pro-blur-card {
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-
-        .pro-blur-card:hover {
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Blur overlay pour les images */
-        .image-blur-overlay {
-            backdrop-filter: blur(0px);
-            -webkit-backdrop-filter: blur(0px);
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
-            transition: all 0.6s ease;
-        }
-
-        .pro-blur-card:hover .image-blur-overlay {
-            backdrop-filter: blur(2px);
-            -webkit-backdrop-filter: blur(2px);
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
-        }
-
-        /* Effet de focus blur */
-        .focus-blur {
-            filter: blur(0px);
-            transition: filter 0.4s ease;
-        }
-
-        .pro-blur-card:hover .focus-blur {
-            filter: blur(1px);
-        }
-
-        .pro-blur-card:hover .no-blur {
-            filter: blur(0px);
-        }
-
-        /* Header avec blur */
-        .header-blur {
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Badge avec blur */
-        .badge-blur {
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            background: rgba(34, 197, 94, 0.2);
-            border: 1px solid rgba(34, 197, 94, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .badge-blur:hover {
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            background: rgba(34, 197, 94, 0.3);
-            transform: scale(1.05);
-        }
-
-        /* Bouton avec blur */
-        .btn-blur {
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            background: rgba(34, 197, 94, 0.1);
-            border: 2px solid rgba(34, 197, 94, 0.3);
-            transition: all 0.4s ease;
-        }
-
-        .btn-blur:hover {
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            background: rgba(34, 197, 94, 0.2);
-            border-color: rgba(34, 197, 94, 0.5);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.2);
-        }
-
-        /* Effet de parallax blur */
-        .parallax-blur {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 30% 20%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 70% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
-            filter: blur(50px);
-            animation: parallaxFloat 20s ease-in-out infinite;
-        }
-
-        @keyframes parallaxFloat {
-
-            0%,
-            100% {
-                transform: translateY(0px) rotate(0deg);
-            }
-
-            33% {
-                transform: translateY(-20px) rotate(1deg);
-            }
-
-            66% {
-                transform: translateY(10px) rotate(-1deg);
-            }
-        }
-
-        /* Texte avec blur sélectif */
-        .text-blur-effect {
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            transition: all 0.3s ease;
-        }
-
-        .pro-blur-card:hover .text-blur-effect {
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-        }
-
-        /* Icône avec blur */
-        .icon-blur {
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .pro-blur-card:hover .icon-blur {
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Section background blur */
-        .section-blur {
-            backdrop-filter: blur(100px);
-            -webkit-backdrop-filter: blur(100px);
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        /* Animation d'apparition */
-        .fade-in-blur {
-            opacity: 0;
-            filter: blur(10px);
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in-blur.visible {
-            opacity: 1;
-            filter: blur(0px);
-            transform: translateY(0px);
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .pro-blur-card {
-                backdrop-filter: blur(15px);
-                -webkit-backdrop-filter: blur(15px);
-            }
-        }
-
-        /*project*/
-        .project-overlay {
-            background: rgba(0, 0, 0, 0.8);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .project-card:hover .project-overlay {
-            opacity: 1;
-        }
-
-        .filter-btn.active {
-            background-color: #10b981;
-            color: white;
-            border-color: #10b981;
-        }
-
-        .carousel-tracks {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            width: 100%;
-        }
-    </style>
 </head>
 
 <body>
@@ -428,26 +74,26 @@
                     class="w-73 h-73 object-cover animate-float transition-transform duration-300">
             </div>
 
-            <!-- Texte et contenu -->
+            <!-- Text and content -->
             <div class="md:w-1/2 flex flex-col items-start space-y-6">
-                <span class="bg-green-200 text-green-800 px-4 py-1 rounded-full text-sm font-medium">Développeuse
-                    Full-Stack</span>
+                <span class="bg-green-200 text-green-800 px-4 py-1 rounded-full text-sm font-medium">Full-Stack
+                    Developer</span>
 
                 <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 dark:text-white leading-tight">
-                    Bonjour, je suis <span class="text-green-600">Latifa Moussaid</span><br>
-                    Créatrice de solutions web modernes.
+                    Hello, I'm <span class="text-green-600">Latifa Moussaid</span><br>
+                    Creator of modern web solutions.
                 </h1>
 
                 <p class="text-gray-600 dark:text-gray-400 text-lg max-w-xl">
-                    Passionnée par le développement web, je conçois des interfaces intuitives et développe des systèmes
-                    performants pour répondre aux besoins des utilisateurs.
+                    Passionate about web development, I design intuitive interfaces and develop high-performance systems
+                    to meet users' needs.
                 </p>
 
-                <!-- Boutons -->
+                <!-- Buttons -->
                 <div class="flex flex-wrap gap-4">
                     <a href="#contact"
                         class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg shadow-md transition">
-                        Me contacter
+                        Contact me
                     </a>
                     <a href="./Latifa_CV.pdf" download
                         class="border border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-6 py-3 rounded-lg shadow-md transition flex items-center gap-2">
@@ -455,7 +101,7 @@
                     </a>
                 </div>
 
-                <!-- Icônes réseaux sociaux -->
+                <!-- Social icons -->
                 <div class="flex space-x-4 mt-6">
                     <a href="https://linkedin.com/in/latifa-moussaid" target="_blank"
                         class="text-gray-500 hover:text-green-600 transition text-xl">
@@ -481,33 +127,30 @@
 
                     <!-- Text content side -->
                     <div class="md:w-1/2 flex flex-col items-start space-y-6">
-                        <span class="bg-green-200 text-green-800 px-4 py-1 rounded-full text-sm font-medium">À propos de
-                            moi</span>
+                        <span class="bg-green-200 text-green-800 px-4 py-1 rounded-full text-sm font-medium">About
+                            Me</span>
 
                         <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white leading-tight">
-                            Développeuse <span class="text-green-600">Full-Stack</span> passionnée par l'innovation.
+                            Passionate <span class="text-green-600">Full-Stack</span> Developer driven by innovation.
                         </h2>
 
                         <p class="text-gray-600 dark:text-gray-400 text-lg max-w-xl">
-                            Je suis <span class="text-green-600 font-semibold">Latifa Moussaid</span>, spécialisée dans
-                            la
-                            création d'interfaces élégantes et intuitives.
-                            Mon expertise s'étend aux technologies modernes comme Laravel, Php, React, Python,
-                            JavaScript,
-                            et
+                            I am <span class="text-green-600 font-semibold">Latifa Moussaid</span>, specialized in
+                            creating elegant and intuitive interfaces.
+                            My expertise covers modern technologies such as Laravel, PHP, React, Python, JavaScript, and
                             Tailwind CSS.
                         </p>
 
                         <p class="text-gray-600 dark:text-gray-400">
-                            Toujours à la recherche de nouvelles opportunités pour apprendre, grandir et collaborer avec
-                            des équipes inspirantes sur des projets innovants.
+                            Always seeking new opportunities to learn, grow, and collaborate with inspiring teams on
+                            innovative projects.
                         </p>
 
                         <!-- Buttons -->
                         <div class="flex flex-wrap gap-4">
                             <a href="#projects"
                                 class="border border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-6 py-3 rounded-lg shadow-md transition flex items-center gap-2">
-                                <i class="fas fa-laptop-code"></i> Voir mes projets
+                                <i class="fas fa-laptop-code"></i> View my projects
                             </a>
                         </div>
 
@@ -531,7 +174,7 @@
                     </div>
                 </div>
 
-                <!-- Carousel intégré directement dans la section about -->
+                <!-- Carousel integrated directly in the about section -->
                 <div class="w-full text-center mt-12">
                     <!-- Carousel -->
                     <div class="carousel auto-scroll">
@@ -647,24 +290,24 @@
             </div>
         </section>
 
-        <!-- Éducation & Expérience-->
+        <!-- Education & Experience-->
         <section id="resume" class="py-16 bg-gray-50 dark:bg-gray-900">
             <div class="container mx-auto px-4 max-w-6xl">
                 <div class=" mb-16">
-                    <span class="bg-green-200 text-green-800 px-4 py-1 rounded-full text-sm font-medium">Mon
-                        Parcours</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mt-4">Éducation & Expérience
+                    <span class="bg-green-200 text-green-800 px-4 py-1 rounded-full text-sm font-medium">My
+                        Journey</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mt-4">Education & Experience
                     </h2>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                    <!-- Éducation -->
+                    <!-- Education -->
                     <div>
                         <h2 class="text-2xl font-bold text-green-600 mb-8 flex items-center gap-2">
-                            <i class="fas fa-graduation-cap"></i> Éducation
+                            <i class="fas fa-graduation-cap"></i> Education
                         </h2>
                         <div class="space-y-10 border-l-4 border-green-600 pl-6 relative">
-                            <!-- Bloc 2025 -->
+                            <!-- 2025 Block -->
                             <div class="relative group">
                                 <div
                                     class="absolute -left-11 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold timeline-dot">
@@ -681,7 +324,7 @@
                                 </div>
                             </div>
 
-                            <!-- Bloc 2024 -->
+                            <!-- 2024 Block -->
                             <div class="relative group">
                                 <div
                                     class="absolute -left-11 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold timeline-dot">
@@ -698,7 +341,7 @@
                                 </div>
                             </div>
 
-                            <!-- Bloc 2022 -->
+                            <!-- 2022 Block -->
                             <div class="relative group">
                                 <div
                                     class="absolute -left-11 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold timeline-dot">
@@ -708,22 +351,22 @@
                                     class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                                     <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Baccalaureate in
                                         Physical Sciences</h3>
-                                    <small class="text-green-600 font-medium">Abdelkhalek Toress High School</small>
+                                    <small class="text-green-600 font-medium">Abdelkhalek Torres High School</small>
                                     <p class="mt-2 text-gray-600 dark:text-gray-300">Obtained a Baccalaureate in
                                         Physical
-                                        Sciences at Abdelkhalek Toress High School.</p>
+                                        Sciences at Abdelkhalek Torres High School.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Expérience -->
+                    <!-- Experience -->
                     <div>
                         <h2 class="text-2xl font-bold text-green-600 mb-8 flex items-center gap-2">
-                            <i class="fas fa-briefcase"></i> Expérience
+                            <i class="fas fa-briefcase"></i> Experience
                         </h2>
                         <div class="space-y-10 border-l-4 border-green-600 pl-6 relative">
-                            <!-- Bloc OmiaData -->
+                            <!-- OmiaData Block -->
                             <div class="relative group">
                                 <div
                                     class="absolute -left-11 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold timeline-dot">
@@ -747,7 +390,7 @@
                                 </div>
                             </div>
 
-                            <!-- Bloc Automotive -->
+                            <!-- Automotive Block -->
                             <div class="relative group">
                                 <div
                                     class="absolute -left-11 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold timeline-dot">
@@ -782,12 +425,12 @@
                 <!-- Section Header -->
                 <div class="text-center mb-16">
                     <span class="bg-green-200 text-green-800 px-4 py-1 rounded-full text-sm font-medium">
-                        Mes Certifications</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mt-4"> Certificats Obtenus
+                        My Certifications</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mt-4"> Obtained Certificates
                     </h2>
                     <p class="text-lg text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
-                        Découvrez les certifications qui attestent de mon expertise et de mon engagement continu dans le
-                        développement web. </p>
+                        Discover the certifications that attest to my expertise and ongoing commitment in web
+                        development. </p>
                 </div>
 
                 <!-- Certificates Grid -->
@@ -808,7 +451,7 @@
                                 <p class="text-gray-300 mb-4">LinkedIn Learning</p>
                                 <div class="flex items-center text-sm text-gray-400">
                                     <i class="fas fa-external-link-alt mr-2"></i>
-                                    Voir le certificat
+                                    View certificate
                                 </div>
                             </div>
                             <div
@@ -834,7 +477,7 @@
                                 <p class="text-gray-300 mb-4">LinkedIn Learning</p>
                                 <div class="flex items-center text-sm text-gray-400">
                                     <i class="fas fa-external-link-alt mr-2"></i>
-                                    Voir le certificat
+                                    View certificate
                                 </div>
                             </div>
                             <div
@@ -860,7 +503,7 @@
                                 <p class="text-gray-300 mb-4">LinkedIn Learning</p>
                                 <div class="flex items-center text-sm text-gray-400">
                                     <i class="fas fa-external-link-alt mr-2"></i>
-                                    Voir le certificat
+                                    View certificate
                                 </div>
                             </div>
                             <div
@@ -889,7 +532,7 @@
                                     <p class="text-gray-300 mb-4">Cisco Networking Academy</p>
                                     <div class="flex items-center text-sm text-gray-400">
                                         <i class="fas fa-external-link-alt mr-2"></i>
-                                        Voir le certificat
+                                        View certificate
                                     </div>
                                 </div>
                                 <div
@@ -915,7 +558,7 @@
                                     <p class="text-gray-300 mb-4">Cisco Networking Academy</p>
                                     <div class="flex items-center text-sm text-gray-400">
                                         <i class="fas fa-external-link-alt mr-2"></i>
-                                        Voir le certificat
+                                        View certificate
                                     </div>
                                 </div>
                                 <div
@@ -937,13 +580,12 @@
                                         class="badge-blur text-cyan-300 text-xs font-bold px-4 py-2 rounded-full inline-block mb-4">
                                         Data Science
                                     </span>
-                                    <h3 class="text-2xl font-bold mb-2 text-blur-effect">Sciences et analyses des
-                                        données
+                                    <h3 class="text-2xl font-bold mb-2 text-blur-effect">Data Science and Analytics
                                     </h3>
                                     <p class="text-gray-300 mb-4">HP Life</p>
                                     <div class="flex items-center text-sm text-gray-400">
                                         <i class="fas fa-external-link-alt mr-2"></i>
-                                        Voir le certificat
+                                        View certificate
                                     </div>
                                 </div>
                                 <div
@@ -960,66 +602,24 @@
                     <button id="show-more-btn"
                         class="px-4 py-1 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium py-4 rounded-lg transition-all duration-300 transform hover:scale-105 ">
                         <i class="fas fa-plus-circle mr-3"></i>
-                        Voir plus de certificats
+                        View more certificates
                     </button>
 
                 </div>
             </div>
         </section>
 
-        <script>
-            // Show/Hide more certificates
-            document.getElementById('show-more-btn').addEventListener('click', function () {
-                const moreCertificates = document.getElementById('more-certificates');
-                const button = this;
 
-                if (moreCertificates.classList.contains('hidden')) {
-                    moreCertificates.classList.remove('hidden');
-                    button.innerHTML = '<i class="fas fa-minus-circle mr-3"></i> Voir moins';
-
-                    // Animate new certificates
-                    setTimeout(() => {
-                        moreCertificates.querySelectorAll('.fade-in-blur').forEach((cert, index) => {
-                            setTimeout(() => {
-                                cert.classList.add('visible');
-                            }, index * 100);
-                        });
-                    }, 100);
-                } else {
-                    moreCertificates.classList.add('hidden');
-                    button.innerHTML = '<i class="fas fa-plus-circle mr-3"></i> Voir plus de certificats';
-                }
-            });
-
-            // Intersection Observer for fade-in animation
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -100px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-
-            // Observe all fade-in elements
-            document.querySelectorAll('.fade-in-blur').forEach(el => {
-                observer.observe(el);
-            });
-        </script>
-        <!-- projet section -->
+        <!-- project section -->
         <section id="projects" class="py-16 bg-white dark:bg-gray-900">
             <div class="container mx-auto px-4 max-w-7xl">
                 <!-- Header -->
                 <div class="text-center mb-16">
-                    <span class="bg-green-200 text-green-800 px-4 py-1 rounded-full text-sm font-medium">Mes
-                        Réalisations</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mt-4">Projets Récents</h2>
+                    <span class="bg-green-200 text-green-800 px-4 py-1 rounded-full text-sm font-medium">My
+                        Achievements</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mt-4">Recent Projects</h2>
                     <p class="text-lg text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
-                        Découvrez une sélection de mes projets web, alliant créativité et expertise technique.
+                        Discover a selection of my web projects, combining creativity and technical expertise.
                     </p>
                 </div>
 
@@ -1028,12 +628,12 @@
                     <button
                         class="filter-btn active px-6 py-2 rounded-full border-2 border-green-600 text-green-600 font-medium transition-all duration-300 hover:bg-green-600 hover:text-white"
                         data-filter="all">
-                        Tous les projets
+                        All projects
                     </button>
                     <button
                         class="filter-btn px-6 py-2 rounded-full border-2 border-gray-300 text-gray-600 font-medium transition-all duration-300 hover:border-green-600 hover:text-green-600"
                         data-filter="web">
-                        Sites Web
+                        Websites
                     </button>
                     <button
                         class="filter-btn px-6 py-2 rounded-full border-2 border-gray-300 text-gray-600 font-medium transition-all duration-300 hover:border-green-600 hover:text-green-600"
@@ -1053,7 +653,7 @@
                     <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
                         data-category="web">
                         <div class="relative group">
-                            <img src="./assets/images/images/appChat.png" alt="Chat Boot"
+                            <img src="./assets/images/images/appChat.png" alt="Chat Bot"
                                 class="w-full h-48 object-cover">
                             <div class="project-overlay absolute inset-0 flex items-center justify-center">
                                 <div class="text-center text-white">
@@ -1068,17 +668,17 @@
                             <div class="flex flex-wrap gap-2 mb-3">
                                 <span
                                     class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-medium">Flutter</span>
-                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">API
-                                    Gemini</span>
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">Gemini
+                                    API</span>
                             </div>
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Chat Boot - Assistant IA
-                                par
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Chat Bot - AI Assistant
+                                by
                                 Gemini</h3>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm">Une application Flutter qui utilise
-                                l'API
-                                Gemini pour créer un chatbot éducatif interactif. Fonctionnalités clés : discussions en
-                                temps réel, synthèse vocale, reconnaissance vocale et interface conviviale. Idéal pour
-                                l'apprentissage en ligne.</p>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">A Flutter application that uses
+                                the
+                                Gemini API to create an interactive educational chatbot. Key features: real-time
+                                discussions, voice synthesis, voice recognition and user-friendly interface. Ideal for
+                                online learning.</p>
                         </div>
                     </div>
 
@@ -1087,9 +687,9 @@
                         data-category="ecommerce">
                         <div class="carousel relative group overflow-hidden" data-carousel>
                             <div class="carousel-tracks flex transition-transform duration-500 ease-in-out">
-                                <img src="./assets/images/images/insta1.png" alt="Vue 1"
+                                <img src="./assets/images/images/insta1.png" alt="View 1"
                                     class="w-full h-48 object-cover flex-shrink-0">
-                                <img src="./assets/images/images/insta2.png" alt="Vue 2"
+                                <img src="./assets/images/images/insta2.png" alt="View 2"
                                     class="w-full h-48 object-cover flex-shrink-0">
                             </div>
 
@@ -1126,16 +726,15 @@
                                     class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">HTML</span>
                                 <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">CSS</span>
                             </div>
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">InstaTrack - Gestion
-                                Avancée de
-                                Followers</h3>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm">InstaTrack est un outil web puissant
-                                développé en Python pour analyser et optimiser votre audience Instagram. Il offre une
-                                gestion précise de vos followers, identifie les comptes qui ne vous suivent pas en
-                                retour,
-                                et permet de les unfollow en un clic. Idéal pour les influenceurs et marketeurs
-                                souhaitant
-                                nettoyer leur réseau et booster leur engagement.</p>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">InstaTrack - Advanced
+                                Followers
+                                Management</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">InstaTrack is a powerful web tool
+                                developed in Python to analyze and optimize your Instagram audience. It offers precise
+                                management of your followers, identifies accounts that don't follow you back,
+                                and allows you to unfollow them with one click. Ideal for influencers and marketers
+                                wanting
+                                to clean up their network and boost their engagement.</p>
                         </div>
                     </div>
 
@@ -1190,117 +789,15 @@
                                     class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-medium">Tailwind</span>
                             </div>
                             <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">TO-DO LIST</h3>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm">TO-DO LIST est un outil web puissant
-                                développé en MVC PHP pour gérer les projets avec simplicité. Il offre une
-                                gestion précise de vos tâches, vous permettant d'ajouter, de modifier et de supprimer
-                                des
-                                éléments facilement. Idéal pour les utilisateurs souhaitant organiser leur travail et
-                                améliorer leur productivité.</p>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">TO-DO LIST is a powerful web tool
+                                developed in MVC PHP to manage projects with simplicity. It offers precise
+                                management of your tasks, allowing you to add, modify and delete
+                                items easily. Ideal for users wanting to organize their work and
+                                improve their productivity.</p>
                         </div>
                     </div>
 
-                    <!-- Project 4 -->
-                    <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
-                        data-category="web">
-                        <div class="relative group">
-                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop"
-                                alt="Projet 4" class="w-full h-48 object-cover">
-                            <div class="project-overlay absolute inset-0 flex items-center justify-center">
-                                <div class="text-center text-white">
-                                    <button
-                                        class="bg-white text-green-600 px-4 py-2 rounded-lg font-medium mr-2 hover:bg-gray-100 transition">
-                                        <i class="fas fa-eye mr-1"></i> Voir
-                                    </button>
-                                    <button
-                                        class="bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 transition">
-                                        <i class="fab fa-github mr-1"></i> Code
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-3">
-                                <span
-                                    class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-medium">Vue.js</span>
-                                <span
-                                    class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">Express</span>
-                                <span
-                                    class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">PostgreSQL</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Dashboard Analytics</h3>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm">Tableau de bord interactif avec
-                                graphiques
-                                en temps réel et analyse de données avancée.</p>
-                        </div>
-                    </div>
 
-                    <!-- Project 5 -->
-                    <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
-                        data-category="web">
-                        <div class="relative group">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop"
-                                alt="Projet 5" class="w-full h-48 object-cover">
-                            <div class="project-overlay absolute inset-0 flex items-center justify-center">
-                                <div class="text-center text-white">
-                                    <button
-                                        class="bg-white text-green-600 px-4 py-2 rounded-lg font-medium mr-2 hover:bg-gray-100 transition">
-                                        <i class="fas fa-eye mr-1"></i> Voir
-                                    </button>
-                                    <button
-                                        class="bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 transition">
-                                        <i class="fab fa-github mr-1"></i> Code
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-3">
-                                <span
-                                    class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs font-medium">Angular</span>
-                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">Spring
-                                    Boot</span>
-                                <span
-                                    class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs font-medium">Firebase</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Système de Réservation</h3>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm">Plateforme de réservation en ligne avec
-                                calendrier interactif et notifications automatiques.</p>
-                        </div>
-                    </div>
-
-                    <!-- Project 6 -->
-                    <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
-                        data-category="ecommerce">
-                        <div class="relative group">
-                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop"
-                                alt="Projet 6" class="w-full h-48 object-cover">
-                            <div class="project-overlay absolute inset-0 flex items-center justify-center">
-                                <div class="text-center text-white">
-                                    <button
-                                        class="bg-white text-green-600 px-4 py-2 rounded-lg font-medium mr-2 hover:bg-gray-100 transition">
-                                        <i class="fas fa-eye mr-1"></i> Voir
-                                    </button>
-                                    <button
-                                        class="bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 transition">
-                                        <i class="fab fa-github mr-1"></i> Code
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex flex-wrap gap-2 mb-3">
-                                <span
-                                    class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">WordPress</span>
-                                <span
-                                    class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">WooCommerce</span>
-                                <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-medium">Custom
-                                    PHP</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Marketplace Locale</h3>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm">Marketplace pour artisans locaux avec
-                                système de notation et géolocalisation.</p>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Load More Button -->
@@ -1308,224 +805,13 @@
                     <button
                         class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105">
                         <i class="fas fa-plus mr-2"></i>
-                        Voir plus de projets
+                        View more projects
                     </button>
                 </div>
             </div>
         </section>
 
-        <script>
-            // Classe Carousel pour gérer tous les carousels
-            class Carousel {
-                constructor(element) {
-                    this.root = element;
-                    this.track = this.root.querySelector('.carousel-tracks');
-                    this.slides = Array.from(this.track.children);
-                    this.prevBtn = this.root.querySelector('.carousel-prev');
-                    this.nextBtn = this.root.querySelector('.carousel-next');
-                    this.dotsContainer = this.root.querySelector('.carousel-dots');
-                    this.currentIndex = 0;
-                    this.autoPlayInterval = null;
-
-                    // Attendre que les images soient chargées
-                    this.waitForImages().then(() => {
-                        this.init();
-                    });
-                }
-
-                waitForImages() {
-                    const images = this.root.querySelectorAll('img');
-                    const promises = Array.from(images).map(img => {
-                        return new Promise(resolve => {
-                            if (img.complete) {
-                                resolve();
-                            } else {
-                                img.onload = resolve;
-                                img.onerror = resolve;
-                            }
-                        });
-                    });
-                    return Promise.all(promises);
-                }
-
-                init() {
-                    this.setupCarousel();
-                    this.createDots();
-                    this.update();
-                    this.addEvents();
-                    // Démarrer l'autoplay après un délai
-                    setTimeout(() => {
-                        this.startAutoPlay();
-                    }, 1000);
-                }
-
-                setupCarousel() {
-                    // S'assurer que le track a la bonne largeur
-                    const totalWidth = this.slides.length * 100;
-                    this.track.style.width = `${totalWidth}%`;
-
-                    // Définir la largeur de chaque slide
-                    this.slides.forEach(slide => {
-                        slide.style.width = `${100 / this.slides.length}%`;
-                    });
-                }
-
-                createDots() {
-                    this.dotsContainer.innerHTML = '';
-                    this.slides.forEach((_, index) => {
-                        const dot = document.createElement('div');
-                        dot.className = 'w-2 h-2 rounded-full cursor-pointer bg-white/50 transition-all hover:bg-white/80';
-                        dot.addEventListener('click', () => {
-                            this.currentIndex = index;
-                            this.update();
-                            this.resetAutoPlay();
-                        });
-                        this.dotsContainer.appendChild(dot);
-                    });
-                }
-
-                update() {
-                    if (!this.slides.length) return;
-
-                    // Calculer le décalage en pourcentage
-                    const translateX = -(this.currentIndex * (100 / this.slides.length));
-                    this.track.style.transform = `translateX(${translateX}%)`;
-
-                    // Mise à jour des dots
-                    Array.from(this.dotsContainer.children).forEach((dot, i) => {
-                        dot.className = i === this.currentIndex
-                            ? 'w-2 h-2 rounded-full bg-white cursor-pointer transition-all'
-                            : 'w-2 h-2 rounded-full bg-white/50 cursor-pointer transition-all hover:bg-white/80';
-                    });
-                }
-
-                addEvents() {
-                    this.nextBtn.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        this.next();
-                        this.resetAutoPlay();
-                    });
-
-                    this.prevBtn.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        this.prev();
-                        this.resetAutoPlay();
-                    });
-
-                    // Pause l'autoplay au survol
-                    this.root.addEventListener('mouseenter', () => {
-                        this.stopAutoPlay();
-                    });
-
-                    this.root.addEventListener('mouseleave', () => {
-                        this.startAutoPlay();
-                    });
-
-                    // Redimensionnement
-                    window.addEventListener('resize', () => {
-                        // Petite temporisation pour éviter les appels répétés
-                        clearTimeout(this.resizeTimeout);
-                        this.resizeTimeout = setTimeout(() => {
-                            this.update();
-                        }, 100);
-                    });
-                }
-
-                next() {
-                    this.currentIndex = (this.currentIndex + 1) % this.slides.length;
-                    this.update();
-                }
-
-                prev() {
-                    this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
-                    this.update();
-                }
-
-                startAutoPlay() {
-                    if (this.autoPlayInterval || this.slides.length <= 1) return;
-                    this.autoPlayInterval = setInterval(() => {
-                        this.next();
-                    }, 3000);
-                }
-
-                stopAutoPlay() {
-                    if (this.autoPlayInterval) {
-                        clearInterval(this.autoPlayInterval);
-                        this.autoPlayInterval = null;
-                    }
-                }
-
-                resetAutoPlay() {
-                    this.stopAutoPlay();
-                    setTimeout(() => {
-                        this.startAutoPlay();
-                    }, 1000);
-                }
-            }
-
-            // Système de filtrage des projets
-            class ProjectFilter {
-                constructor() {
-                    this.filterButtons = document.querySelectorAll('.filter-btn');
-                    this.projectCards = document.querySelectorAll('.project-card');
-                    this.init();
-                }
-
-                init() {
-                    this.filterButtons.forEach(btn => {
-                        btn.addEventListener('click', (e) => {
-                            const filter = e.target.dataset.filter;
-                            this.setActiveButton(e.target);
-                            this.filterProjects(filter);
-                        });
-                    });
-                }
-
-                setActiveButton(activeBtn) {
-                    this.filterButtons.forEach(btn => {
-                        btn.classList.remove('active');
-                        btn.classList.add('px-6', 'py-2', 'rounded-full', 'border-2', 'border-gray-300', 'text-gray-600', 'font-medium', 'transition-all', 'duration-300', 'hover:border-green-600', 'hover:text-green-600');
-                    });
-
-                    activeBtn.classList.add('active');
-                    activeBtn.classList.remove('border-gray-300', 'text-gray-600');
-                    activeBtn.classList.add('border-green-600', 'text-green-600');
-                }
-
-                filterProjects(filter) {
-                    this.projectCards.forEach(card => {
-                        const category = card.dataset.category;
-
-                        if (filter === 'all' || category === filter) {
-                            card.style.display = 'block';
-                            card.style.opacity = '0';
-                            setTimeout(() => {
-                                card.style.opacity = '1';
-                            }, 100);
-                        } else {
-                            card.style.opacity = '0';
-                            setTimeout(() => {
-                                card.style.display = 'none';
-                            }, 300);
-                        }
-                    });
-                }
-            }
-
-            // Initialisation au chargement du DOM
-            document.addEventListener('DOMContentLoaded', () => {
-                // Initialiser tous les carousels
-                document.querySelectorAll('[data-carousel]').forEach(el => {
-                    new Carousel(el);
-                });
-
-                // Initialiser le système de filtrage
-                new ProjectFilter();
-            });
-        </script>
-
-
-        <!-- SECTION CONTACT -->
+        <!-- CONTACT SECTION -->
         <section id="contact"
             class="py-16 bg-gradient-to-br from-gray-900 via-green-900 to-gray-900 text-white relative overflow-hidden">
             <!-- Background decoration -->
@@ -1543,10 +829,11 @@
                 <!-- Header -->
                 <div class="text-center mb-16">
                     <span
-                        class="bg-green-500/20 text-green-300 px-4 py-1 rounded-full text-sm font-medium border border-green-500/30">Contactez-moi</span>
-                    <h2 class="text-3xl md:text-4xl font-bold mt-4">Travaillons Ensemble</h2>
+                        class="bg-green-500/20 text-green-300 px-4 py-1 rounded-full text-sm font-medium border border-green-500/30">Contact
+                        Me</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-4">Let's Work Together</h2>
                     <p class="text-xl text-gray-300 mt-4 max-w-2xl mx-auto">
-                        Prêt à donner vie à votre projet ? Contactez-moi pour discuter de vos idées.
+                        Ready to bring your project to life? Contact me to discuss your ideas.
                     </p>
                 </div>
 
@@ -1555,43 +842,43 @@
                     <div class="contact-form rounded-2xl p-8">
                         <h3 class="text-2xl font-bold mb-6 flex items-center">
                             <i class="fas fa-paper-plane mr-3 text-green-400"></i>
-                            Envoyez-moi un message
+                            Send me a message
                         </h3>
 
                         <form class="space-y-6">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
-                                    <label class="block text-sm font-medium mb-2">Nom complet</label>
+                                    <label class="block text-sm font-medium mb-2">Full Name</label>
                                     <input type="text"
                                         class="w-full text-gray-800 px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400/50 transition-all duration-300"
-                                        placeholder="Votre nom" name="user_name" required>
+                                        placeholder="Your name" name="user_name" required>
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium mb-2">Email</label>
                                     <input type="email"
                                         class="w-full text-gray-800 px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400/50 transition-all duration-300"
-                                        placeholder="votre@email.com" name="user_email" required>
+                                        placeholder="your@email.com" name="user_email" required>
                                 </div>
                             </div>
 
                             <div>
-                                <label class="block text-sm font-medium mb-2">Sujet</label>
+                                <label class="block text-sm font-medium mb-2">Subject</label>
                                 <input type="text"
                                     class="w-full text-gray-800 px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400/50 transition-all duration-300"
-                                    placeholder="Sujet de votre message" name="subject" required>
+                                    placeholder="Subject of your message" name="subject" required>
                             </div>
 
                             <div>
                                 <label class="block text-sm font-medium mb-2">Message</label>
                                 <textarea rows="5"
                                     class="w-full text-gray-800 px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400/50 transition-all duration-300 resize-none"
-                                    placeholder="Décrivez votre projet..." name="message" required></textarea>
+                                    placeholder="Describe your project..." name="message" required></textarea>
                             </div>
 
                             <button type="submit"
                                 class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium py-4 rounded-lg transition-all duration-300 transform hover:scale-105 pulse-animation">
                                 <i class="fas fa-rocket mr-2"></i>
-                                Envoyer le message
+                                Send Message
                             </button>
                         </form>
                     </div>
@@ -1616,15 +903,15 @@
                                     <i class="fas fa-map-marker-alt text-white"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-lg">Localisation</h4>
-                                    <p class="text-gray-300">Casablanca, Maroc</p>
+                                    <h4 class="font-semibold text-lg">Location</h4>
+                                    <p class="text-gray-300">Casablanca, Morocco</p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Social Links -->
                         <div class="contact-info-card rounded-2xl p-6">
-                            <h4 class="font-semibold text-lg mb-4">Suivez-moi</h4>
+                            <h4 class="font-semibold text-lg mb-4">Follow Me</h4>
                             <div class="flex space-x-4">
                                 <a href="https://linkedin.com/in/latifa-moussaid-278757278" target="_blank"
                                     class="w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
@@ -1646,9 +933,9 @@
                         <div class="contact-info-card rounded-2xl p-6 border-2 border-green-500/50">
                             <div class="text-center">
                                 <div class="w-4 h-4 bg-green-500 rounded-full mx-auto mb-2 pulse-animation"></div>
-                                <h4 class="font-semibold text-lg text-green-400">Disponible pour de nouveaux projets
+                                <h4 class="font-semibold text-lg text-green-400">Available for new projects
                                 </h4>
-                                <p class="text-gray-300 text-sm mt-2">Réponse sous 24h garantie</p>
+                                <p class="text-gray-300 text-sm mt-2">Response within 24h guaranteed</p>
                             </div>
                         </div>
                     </div>
@@ -1657,119 +944,7 @@
         </section>
     </main>
 
-    <script>
-        /*nav*/
-        const sections = document.querySelectorAll("section[id]");
-        const navLinks = document.querySelectorAll(".nav-link");
 
-        window.addEventListener("scroll", () => {
-            let current = "";
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.offsetHeight;
-                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                    current = section.getAttribute("id");
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove("text-green-600", "font-semibold");
-                if (link.getAttribute("href") === `#${current}`) {
-                    link.classList.add("text-green-600", "font-semibold");
-                }
-            });
-        });
-
-
-    </script>
-    <script>
-        const track = document.querySelector('.carousel-track');
-
-        // Dupliquer les éléments pour un effet de boucle fluide
-        const items = Array.from(track.children);
-        items.forEach(item => {
-            const clone = item.cloneNode(true);
-            track.appendChild(clone);
-        });
-
-        let scrollSpeed = 1; // pixels
-        let scrollInterval;
-
-        function startScroll() {
-            scrollInterval = setInterval(() => {
-                track.scrollLeft += scrollSpeed;
-
-                // Revenir au début sans montrer l'espace blanc
-                if (track.scrollLeft >= track.scrollWidth / 2) {
-                    track.scrollLeft = 0;
-                }
-            }, 20);
-        }
-
-        function stopScroll() {
-            clearInterval(scrollInterval);
-        }
-
-        track.addEventListener('mouseenter', stopScroll);
-        track.addEventListener('mouseleave', startScroll);
-
-        startScroll();
-
-        // Project filtering
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const filter = button.getAttribute('data-filter');
-
-                // Update active button
-                filterButtons.forEach(btn => btn.classList.remove('active', 'bg-green-600', 'text-white'));
-                button.classList.add('active', 'bg-green-600', 'text-white');
-
-                // Filter projects
-                projectCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = 'block';
-                        card.style.animation = 'fadeIn 0.5s ease';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // Contact form animation
-        const formInputs = document.querySelectorAll('input, textarea');
-        formInputs.forEach(input => {
-            input.addEventListener('focus', () => {
-                input.style.transform = 'scale(1.02)';
-            });
-
-            input.addEventListener('blur', () => {
-                input.style.transform = 'scale(1)';
-            });
-        });
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-        (function () {
-            emailjs.init("-QmE4sVYf64vCCTxk"); // Remplace avec ton vrai public key
-        })();
-
-        document.querySelector("form").addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            emailjs.sendForm("service_jsrvsia", "template_ti79wrc", this)
-                .then(function () {
-                    alert("Message envoyé avec succès !");
-                }, function (error) {
-                    alert("Erreur lors de l'envoi. Réessayez.");
-                    console.log(error);
-                });
-        });
-    </script>
 
 </body>
 
